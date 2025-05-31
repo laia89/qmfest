@@ -3,6 +3,11 @@ import { NextIntlClientProvider } from 'next-intl'
 import { notFound } from 'next/navigation'
 import '../globals.css'
 
+export const metadata = {
+  title: 'QM Fest',
+  description: 'The biggest music festival in Mallorca',
+}
+
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'es' }, { locale: 'ca' }]
 }

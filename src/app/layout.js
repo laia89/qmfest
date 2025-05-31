@@ -1,17 +1,15 @@
-import { Inter } from 'next/font/google'
+import { fonts } from './fonts'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
-
 export const metadata = {
-  title: 'QMFest - Festival de Música Queer',
-  description: 'Festival de música queer en Barcelona',
+  title: 'QM Fest',
+  description: 'The biggest music festival in Mallorca',
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html>
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={fonts}>
+      <body className="min-h-screen bg-light">{children}</body>
     </html>
   )
 }
