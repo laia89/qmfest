@@ -1,0 +1,51 @@
+{
+  "locale": "en",
+  "navigation": {
+    "home": "Home",
+    "lineup": "Line-up",
+    "tickets": "Tickets",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "QMFest",
+    "subtitle": "Queer Music Festival",
+    "description": "Celebrating diversity through music",
+    "date": "May 25th 2024, Barcelona",
+    "cta": "Get your tickets"
+  },
+  "about": {
+    "title": "About the Festival",
+    "description": "A day of celebration of diversity and queer music in Barcelona. A unique experience that brings together the LGTBIQ+ community through art and music.",
+    "values": {
+      "title": "Our Values",
+      "diversity": "Diversity",
+      "diversityDesc": "We celebrate all gender identities and expressions",
+      "inclusion": "Inclusion",
+      "inclusionDesc": "A safe space for everyone",
+      "art": "Art",
+      "artDesc": "Music as a tool for social change"
+    }
+  },
+  "lineup": {
+    "title": "Line-up",
+    "subtitle": "Discover the artists that will make the festival vibrate",
+    "cta": "See all artists"
+  },
+  "location": {
+    "title": "Location",
+    "subtitle": "Parc del Fòrum, Barcelona",
+    "description": "An iconic space by the Mediterranean Sea"
+  },
+  "tickets": {
+    "title": "Tickets",
+    "subtitle": "Don't miss this unique experience",
+    "earlyBird": "Early Bird",
+    "earlyBirdPrice": "25€",
+    "regular": "Regular",
+    "regularPrice": "35€",
+    "vip": "VIP",
+    "vipPrice": "75€",
+    "cta": "Buy now"
+  }
+}
