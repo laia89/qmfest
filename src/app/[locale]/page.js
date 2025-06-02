@@ -10,7 +10,7 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-purple-900/80 to-pink-900/80 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-festival-purple to-festival-purple/80 z-10" />
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -19,8 +19,8 @@ export default function Home() {
           }}
         />
         <div className="container mx-auto px-4 relative z-20 text-center">
-          <h1 className="text-7xl md:text-9xl font-bold mb-4 animate-fade-in">
-            {t('hero.title')}
+          <h1 className="text-festival-yellow text-6xl md:text-8xl font-bold mb-4 animate-fade-in">
+            Queer Music Fest
           </h1>
           <p className="text-2xl md:text-4xl mb-6 animate-fade-in-delay-1">
             {t('hero.subtitle')}
@@ -33,7 +33,7 @@ export default function Home() {
           </p>
           <Link
             href={`/${t('locale')}/tickets`}
-            className="inline-block bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-12 rounded-full text-xl transition-colors animate-fade-in-delay-4"
+            className="inline-block bg-festival-yellow hover:bg-festival-yellow/80 text-black font-bold py-4 px-12 rounded-full text-xl transition-colors animate-fade-in-delay-4"
           >
             {t('hero.cta')}
           </Link>
@@ -74,7 +74,7 @@ export default function Home() {
       </section>
 
       {/* Line-up Preview */}
-      <section className="py-20 bg-gradient-to-b from-purple-900 to-pink-900 text-white">
+      <section className="py-20 bg-gradient-to-b from-festival-purple to-festival-yellow text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-4">{t('lineup.title')}</h2>
           <p className="text-xl mb-12">{t('lineup.subtitle')}</p>
@@ -99,7 +99,7 @@ export default function Home() {
       </section>
 
       {/* Tickets */}
-      <section className="py-20 bg-gradient-to-b from-pink-900 to-purple-900 text-white">
+      <section className="py-20 bg-gradient-to-b from-festival-yellow to-festival-purple text-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-4">
             {t('tickets.title')}

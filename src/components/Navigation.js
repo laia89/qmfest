@@ -21,7 +21,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           <Link
             href={`/${currentLocale}`}
-            className="text-white text-xl font-bold"
+            className="text-festival-yellow text-xl font-bold font-heading"
           >
             QM Fest
           </Link>
