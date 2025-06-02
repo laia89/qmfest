@@ -55,6 +55,11 @@ const config = {
           800: '#1E293B',
           900: '#0F172A',
         },
+        festival: {
+          purple: '#7758d4', // Main background color
+          yellow: '#ffc534', // Accent color for CTAs and headers
+          cream: '#fbf2e9', // Text color
+        },
       },
       fontFamily: {
         sans: ['var(--font-lato)'],
