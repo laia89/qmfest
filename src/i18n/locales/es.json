@@ -2,9 +2,9 @@
   "locale": "es",
   "navigation": {
     "home": "Inicio",
-    "lineup": "Line-up",
+    "lineup": "Artistas",
     "tickets": "Entradas",
-    "about": "Sobre el festival",
+    "about": "Sobre Nosotros",
     "contact": "Contacto"
   },
   "hero": {

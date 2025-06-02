@@ -11,50 +11,6 @@ const config = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: '#0066FF',
-          50: '#E6F0FF',
-          100: '#CCE0FF',
-          200: '#99C2FF',
-          300: '#66A3FF',
-          400: '#3385FF',
-          500: '#0066FF',
-          600: '#0052CC',
-          700: '#003D99',
-          800: '#002966',
-          900: '#001433',
-        },
-        accent_1: '#FF6B6B',
-        accent_2: '#4ECDC4',
-        accent_3: '#FFE66D',
-        accent_4: '#1A535C',
-        warning: '#FFB800',
-        info: '#00B8D9',
-        light: '#F8F9FA',
-        neutral: {
-          50: '#F9FAFB',
-          100: '#F3F4F6',
-          200: '#E5E7EB',
-          300: '#D1D5DB',
-          400: '#9CA3AF',
-          500: '#6B7280',
-          600: '#4B5563',
-          700: '#374151',
-          800: '#1F2937',
-          900: '#111827',
-        },
-        neutral_2: {
-          50: '#F8FAFC',
-          100: '#F1F5F9',
-          200: '#E2E8F0',
-          300: '#CBD5E1',
-          400: '#94A3B8',
-          500: '#64748B',
-          600: '#475569',
-          700: '#334155',
-          800: '#1E293B',
-          900: '#0F172A',
-        },
         festival: {
           purple: '#7758d4', // Main background color
           yellow: '#ffc534', // Accent color for CTAs and headers
@@ -107,5 +63,4 @@ const config = {
   },
   plugins: [forms, typography, animate],
 }
-
 export default config

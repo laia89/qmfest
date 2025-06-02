@@ -2,9 +2,9 @@
   "locale": "ca",
   "navigation": {
     "home": "Inici",
-    "lineup": "Line-up",
+    "lineup": "Artistes",
     "tickets": "Entrades",
-    "about": "Sobre el festival",
+    "about": "Sobre Nosaltres",
     "contact": "Contacte"
   },
   "hero": {
