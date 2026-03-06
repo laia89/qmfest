@@ -4,14 +4,72 @@
     "home": "Inicio",
     "lineup": "Artistas",
     "tickets": "Entradas",
+    "program": "Programa",
     "about": "Sobre Nosotros",
+    "faq": "FAQ",
     "contact": "Contacto"
   },
   "hero": {
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=2070&auto=format&fit=crop",
     "subtitle": "Festival de Música Queer",
     "description": "Celebrando la diversidad a través de la música",
     "date": "25 de Mayo 2026, Barcelona",
     "cta": "Consigue tus entradas"
+  },
+  "footer": {
+    "newsletterTitle": "Mantente al día",
+    "newsletterPlaceholder": "Tu email",
+    "newsletterCta": "Suscribirse",
+    "newsletterSuccess": "¡Suscrito! Te escribimos pronto.",
+    "socialTitle": "Síguenos",
+    "privacy": "Privacidad",
+    "cookies": "Cookies",
+    "contact": "Contacto"
+  },
+  "faq": {
+    "title": "FAQ",
+    "subtitle": "Preguntas frecuentes",
+    "items": [
+      {
+        "q": "¿Cuándo y dónde es el festival?",
+        "a": "Sábado 25 de mayo de 2026 en el Parc del Fòrum, Barcelona. Puertas a las 16h."
+      },
+      {
+        "q": "¿Cómo compro entradas?",
+        "a": "En la página de Entradas. Early Bird, Regular y VIP."
+      },
+      {
+        "q": "¿El recinto es accesible?",
+        "a": "Sí. Hay entradas, aseos y zonas de visión accesibles. Escríbenos para necesidades concretas."
+      },
+      {
+        "q": "¿Hay reembolsos?",
+        "a": "Las entradas no se reembolsan salvo cancelación del evento. Ver Condiciones."
+      },
+      {
+        "q": "¿Qué puedo llevar?",
+        "a": "Bolsas pequeñas. No vidrio, no cámaras profesionales. Lista completa en la entrada."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Escríbenos",
+    "formName": "Nombre",
+    "formEmail": "Email",
+    "formMessage": "Mensaje",
+    "formSend": "Enviar",
+    "formSuccess": "¡Gracias! Te responderemos pronto.",
+    "email": "hola@qmfest.com",
+    "socialTitle": "Encuéntranos"
+  },
+  "program": {
+    "title": "Programa",
+    "subtitle": "Horarios y escenarios",
+    "day": "Día",
+    "time": "Hora",
+    "stage": "Escenario",
+    "artist": "Artista"
   },
   "about": {
     "title": "Sobre el Festival",
@@ -34,7 +92,36 @@
   "location": {
     "title": "Ubicación",
     "subtitle": "Parc del Fòrum, Barcelona",
-    "description": "Un espacio icónico junto al mar Mediterráneo"
+    "description": "Un espacio icónico junto al mar Mediterráneo",
+    "mapLink": "https://www.google.com/maps/place/Parc+del+F%C3%B2rum",
+    "gettingThere": "Cómo llegar",
+    "transport": "Metro: L4 El Maresme | Fòrum. Tram: T4. Bus: 7, 36, 41.",
+    "mapCta": "Ver en mapa"
+  },
+  "legal": {
+    "privacyTitle": "Política de privacidad",
+    "privacyIntro": "QM Fest respeta tu privacidad. Esta política explica cómo recogemos y usamos tus datos.",
+    "privacySections": [
+      "Recogemos los datos que nos facilitas al comprar entradas (email, nombre) y al contactarnos o suscribirte al newsletter.",
+      "Usamos estos datos para procesar pedidos, enviar confirmaciones y novedades del evento, y para comunicarnos contigo.",
+      "No vendemos tus datos a terceros. Podemos compartir datos con proveedores (p. ej. pasarela de pago) estrictamente necesarios para el servicio.",
+      "Puedes solicitar acceso, rectificación o supresión de tus datos escribiéndonos.",
+      "Última actualización: 2026."
+    ],
+    "cookiesTitle": "Política de cookies",
+    "cookiesIntro": "Utilizamos cookies y tecnologías similares en nuestra web.",
+    "cookiesSections": [
+      "Cookies esenciales: necesarias para el funcionamiento del sitio (idioma, consentimiento).",
+      "Cookies de analíticas: podemos usar herramientas para entender el uso del sitio (anonimizado).",
+      "Puedes aceptar todas las cookies o solo las esenciales mediante el banner. Puedes cambiar tu elección después.",
+      "Última actualización: 2026."
+    ]
+  },
+  "cookiesBanner": {
+    "message": "Usamos cookies para mejorar tu experiencia y analíticas.",
+    "link": "Política de cookies",
+    "accept": "Aceptar todas",
+    "decline": "Solo esenciales"
   },
   "tickets": {
     "title": "Entradas",

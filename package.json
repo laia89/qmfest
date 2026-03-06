@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
+    "framer-motion": "^12.35.0",
     "gray-matter": "^4.0.3",
     "next": "^15.3.3",
     "next-intl": "^4.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-markdown": "^10.1.0"
+    "react-markdown": "^10.1.0",
+    "stripe": "^20.4.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

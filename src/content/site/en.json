@@ -4,14 +4,81 @@
     "home": "Home",
     "lineup": "Lineup",
     "tickets": "Tickets",
+    "program": "Programme",
     "about": "About",
+    "faq": "FAQ",
     "contact": "Contact"
   },
   "hero": {
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=2070&auto=format&fit=crop",
     "subtitle": "Queer Music Festival",
     "description": "Celebrating diversity through music",
     "date": "May 25th 2026, Barcelona",
     "cta": "Get your tickets"
+  },
+  "footer": {
+    "newsletterTitle": "Stay tuned",
+    "newsletterPlaceholder": "Your email",
+    "newsletterCta": "Subscribe",
+    "newsletterSuccess": "Subscribed! We'll be in touch.",
+    "socialTitle": "Follow us",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "contact": "Contact"
+  },
+  "faq": {
+    "title": "FAQ",
+    "subtitle": "Frequently asked questions",
+    "items": [
+      {
+        "q": "When and where is the festival?",
+        "a": "Saturday 25 May 2026 at Parc del Fòrum, Barcelona. Gates open at 4pm."
+      },
+      {
+        "q": "How can I buy tickets?",
+        "a": "Tickets are available on our Tickets page. Early Bird, Regular and VIP options."
+      },
+      {
+        "q": "Is the venue accessible?",
+        "a": "Yes. The venue has accessible entrances, toilets and viewing areas. Contact us for specific needs."
+      },
+      {
+        "q": "Can I get a refund?",
+        "a": "Tickets are non-refundable except if the event is cancelled. See our Terms for details."
+      },
+      {
+        "q": "What can I bring?",
+        "a": "Small bags allowed. No glass, no professional cameras. Full list at the entrance."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get in touch",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formMessage": "Message",
+    "formSend": "Send",
+    "formSuccess": "Thank you! We'll get back to you soon.",
+    "email": "hola@qmfest.com",
+    "socialTitle": "Find us"
+  },
+  "program": {
+    "title": "Programme",
+    "subtitle": "Schedule and stages",
+    "day": "Day",
+    "time": "Time",
+    "stage": "Stage",
+    "artist": "Artist"
+  },
+  "location": {
+    "title": "Location",
+    "subtitle": "Parc del Fòrum, Barcelona",
+    "description": "An iconic space by the Mediterranean Sea",
+    "mapLink": "https://www.google.com/maps/place/Parc+del+F%C3%B2rum",
+    "gettingThere": "Getting there",
+    "transport": "Metro: L4 El Maresme | Fòrum. Tram: T4. Bus: 7, 36, 41.",
+    "mapCta": "View on map"
   },
   "about": {
     "title": "About the Festival",
@@ -31,10 +98,30 @@
     "subtitle": "Discover the artists that will make the festival vibrate",
     "cta": "See all artists"
   },
-  "location": {
-    "title": "Location",
-    "subtitle": "Parc del Fòrum, Barcelona",
-    "description": "An iconic space by the Mediterranean Sea"
+  "legal": {
+    "privacyTitle": "Privacy Policy",
+    "privacyIntro": "QM Fest respects your privacy. This policy explains how we collect and use your data.",
+    "privacySections": [
+      "We collect the data you provide when buying tickets (email, name) and when you contact us or subscribe to the newsletter.",
+      "We use this data to process orders, send confirmations and event updates, and to communicate with you.",
+      "We do not sell your data to third parties. We may share data with service providers (e.g. payment processor) strictly necessary for the service.",
+      "You can request access, rectification or deletion of your data by writing to us.",
+      "Last update: 2026."
+    ],
+    "cookiesTitle": "Cookie Policy",
+    "cookiesIntro": "We use cookies and similar technologies on our website.",
+    "cookiesSections": [
+      "Essential cookies: necessary for the site to function (e.g. language, consent).",
+      "Analytics cookies: we may use tools to understand how visitors use the site (anonymous).",
+      "You can accept all cookies or only essential ones via the banner. You can change your choice later.",
+      "Last update: 2026."
+    ]
+  },
+  "cookiesBanner": {
+    "message": "We use cookies to improve your experience and analytics.",
+    "link": "Cookie policy",
+    "accept": "Accept all",
+    "decline": "Essential only"
   },
   "tickets": {
     "title": "Tickets",

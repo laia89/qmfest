@@ -1,0 +1,34 @@
+[
+  {
+    "day": "1",
+    "date": "25 May 2026",
+    "time": "16:00",
+    "stage": "Main Stage",
+    "artistId": "artist-2",
+    "artistName": "Soul Collective"
+  },
+  {
+    "day": "1",
+    "date": "25 May 2026",
+    "time": "18:00",
+    "stage": "Main Stage",
+    "artistId": "artist-3",
+    "artistName": "Luna Pop"
+  },
+  {
+    "day": "1",
+    "date": "25 May 2026",
+    "time": "20:00",
+    "stage": "Dance Tent",
+    "artistId": "artist-1",
+    "artistName": "DJ Rainbow"
+  },
+  {
+    "day": "1",
+    "date": "25 May 2026",
+    "time": "22:00",
+    "stage": "Main Stage",
+    "artistId": "artist-4",
+    "artistName": "Bass Queen"
+  }
+]

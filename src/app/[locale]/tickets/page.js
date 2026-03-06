@@ -1,16 +1,45 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
-import Link from 'next/link'
+import { useLocale, useTranslations } from 'next-intl'
+import { useState } from 'react'
+
+const PRICE_IDS = {
+  earlyBird: process.env.NEXT_PUBLIC_STRIPE_EARLY_BIRD_PRICE_ID,
+  regular: process.env.NEXT_PUBLIC_STRIPE_REGULAR_PRICE_ID,
+  vip: process.env.NEXT_PUBLIC_STRIPE_VIP_PRICE_ID,
+}
 
 export default function TicketsPage() {
   const t = useTranslations('tickets')
+  const locale = useLocale()
+  const [loading, setLoading] = useState(null)
+
+  const handleCheckout = async (type) => {
+    const priceId = PRICE_IDS[type]
+    if (!priceId) return
+    setLoading(type)
+    try {
+      const res = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ priceId, quantity: 1, locale }),
+      })
+      const data = await res.json()
+      if (data.url) window.location.href = data.url
+      else throw new Error(data.error || 'Checkout failed')
+    } catch (err) {
+      console.error(err)
+      setLoading(null)
+    }
+  }
+
+  const hasStripe = PRICE_IDS.earlyBird || PRICE_IDS.regular || PRICE_IDS.vip
 
   return (
     <main className="min-h-screen pt-24 pb-16">
       <section className="py-16 bg-gradient-to-b from-festival-cream to-festival-purple/10">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl text-festival-purple mb-4">
+          <h1 className="text-4xl md:text-5xl text-festival-purple mb-4 font-heading">
             {t('title')}
           </h1>
           <p className="text-xl text-festival-purple/80 max-w-2xl mx-auto mb-16">
@@ -18,7 +47,7 @@ export default function TicketsPage() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-lg p-8 border-2 border-festival-yellow/30 hover:border-festival-yellow transition-colors">
+            <div className="bg-white rounded-2xl shadow-lg p-8 border-2 border-festival-yellow/30 hover:border-festival-yellow transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
               <h2 className="text-2xl text-festival-purple mb-2 font-heading">
                 {t('earlyBird')}
               </h2>
@@ -28,14 +57,22 @@ export default function TicketsPage() {
               <p className="text-festival-purple/70 text-sm mb-6">
                 Limited availability
               </p>
-              <Link
-                href="#"
-                className="block w-full bg-festival-yellow hover:bg-festival-yellow/90 text-festival-purple font-bold py-3 px-8 rounded-full text-center transition-colors"
-              >
-                {t('cta')}
-              </Link>
+              {PRICE_IDS.earlyBird ? (
+                <button
+                  type="button"
+                  onClick={() => handleCheckout('earlyBird')}
+                  disabled={!!loading}
+                  className="block w-full bg-festival-yellow hover:bg-festival-yellow/90 text-festival-purple font-bold py-3 px-8 rounded-full text-center transition-colors disabled:opacity-70"
+                >
+                  {loading === 'earlyBird' ? '…' : t('cta')}
+                </button>
+              ) : (
+                <span className="block w-full bg-festival-purple/20 text-festival-purple/70 font-bold py-3 px-8 rounded-full text-center cursor-not-allowed">
+                  {t('cta')}
+                </span>
+              )}
             </div>
-            <div className="bg-white rounded-2xl shadow-lg p-8 border-2 border-festival-purple/30 hover:border-festival-purple transition-colors">
+            <div className="bg-white rounded-2xl shadow-lg p-8 border-2 border-festival-purple/30 hover:border-festival-purple transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
               <h2 className="text-2xl text-festival-purple mb-2 font-heading">
                 {t('regular')}
               </h2>
@@ -45,14 +82,22 @@ export default function TicketsPage() {
               <p className="text-festival-purple/70 text-sm mb-6">
                 Standard entry
               </p>
-              <Link
-                href="#"
-                className="block w-full bg-festival-purple hover:bg-festival-purple/90 text-festival-cream font-bold py-3 px-8 rounded-full text-center transition-colors"
-              >
-                {t('cta')}
-              </Link>
+              {PRICE_IDS.regular ? (
+                <button
+                  type="button"
+                  onClick={() => handleCheckout('regular')}
+                  disabled={!!loading}
+                  className="block w-full bg-festival-purple hover:bg-festival-purple/90 text-festival-cream font-bold py-3 px-8 rounded-full text-center transition-colors disabled:opacity-70"
+                >
+                  {loading === 'regular' ? '…' : t('cta')}
+                </button>
+              ) : (
+                <span className="block w-full bg-festival-purple/20 text-festival-purple/70 font-bold py-3 px-8 rounded-full text-center cursor-not-allowed">
+                  {t('cta')}
+                </span>
+              )}
             </div>
-            <div className="bg-white rounded-2xl shadow-lg p-8 border-2 border-festival-yellow/50 hover:border-festival-yellow transition-colors">
+            <div className="bg-white rounded-2xl shadow-lg p-8 border-2 border-festival-yellow/50 hover:border-festival-yellow transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
               <h2 className="text-2xl text-festival-purple mb-2 font-heading">
                 {t('vip')}
               </h2>
@@ -62,18 +107,29 @@ export default function TicketsPage() {
               <p className="text-festival-purple/70 text-sm mb-6">
                 Backstage + perks
               </p>
-              <Link
-                href="#"
-                className="block w-full bg-festival-yellow hover:bg-festival-yellow/90 text-festival-purple font-bold py-3 px-8 rounded-full text-center transition-colors"
-              >
-                {t('cta')}
-              </Link>
+              {PRICE_IDS.vip ? (
+                <button
+                  type="button"
+                  onClick={() => handleCheckout('vip')}
+                  disabled={!!loading}
+                  className="block w-full bg-festival-yellow hover:bg-festival-yellow/90 text-festival-purple font-bold py-3 px-8 rounded-full text-center transition-colors disabled:opacity-70"
+                >
+                  {loading === 'vip' ? '…' : t('cta')}
+                </button>
+              ) : (
+                <span className="block w-full bg-festival-purple/20 text-festival-purple/70 font-bold py-3 px-8 rounded-full text-center cursor-not-allowed">
+                  {t('cta')}
+                </span>
+              )}
             </div>
           </div>
 
-          <p className="mt-12 text-festival-purple/60 text-sm">
-            Ticket sales open soon.
-          </p>
+          {!hasStripe && (
+            <p className="mt-12 text-festival-purple/60 text-sm">
+              Ticket sales open soon. Configure Stripe price IDs in .env to
+              enable checkout.
+            </p>
+          )}
         </div>
       </section>
     </main>

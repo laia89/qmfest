@@ -4,14 +4,72 @@
     "home": "Inici",
     "lineup": "Artistes",
     "tickets": "Entrades",
+    "program": "Programa",
     "about": "Sobre Nosaltres",
+    "faq": "FAQ",
     "contact": "Contacte"
   },
   "hero": {
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=2070&auto=format&fit=crop",
     "subtitle": "Festival de Música Queer",
     "description": "Celebrant la diversitat a través de la música",
     "date": "25 de Maig 2026, Barcelona",
     "cta": "Compra les teves entrades"
+  },
+  "footer": {
+    "newsletterTitle": "Mantingueu-vos al dia",
+    "newsletterPlaceholder": "El vostre email",
+    "newsletterCta": "Subscriure's",
+    "newsletterSuccess": "Subscrit! Et contactarem aviat.",
+    "socialTitle": "Segueix-nos",
+    "privacy": "Privacitat",
+    "cookies": "Cookies",
+    "contact": "Contacte"
+  },
+  "faq": {
+    "title": "FAQ",
+    "subtitle": "Preguntes freqüents",
+    "items": [
+      {
+        "q": "Quan i on és el festival?",
+        "a": "Dissabte 25 de maig de 2026 al Parc del Fòrum, Barcelona. Portes a les 16h."
+      },
+      {
+        "q": "Com compro entrades?",
+        "a": "A la pàgina d'Entrades. Early Bird, Regular i VIP."
+      },
+      {
+        "q": "El recinte és accessible?",
+        "a": "Sí. Hi ha entrades, lavabos i zones accessibles. Escriviu-nos per necessitats concretes."
+      },
+      {
+        "q": "Hi ha reemborsaments?",
+        "a": "Les entrades no es reemborsen tret de cancel·lació. Veure Condicions."
+      },
+      {
+        "q": "Què puc portar?",
+        "a": "Bosses petites. No vidre, no càmeres professionals. Llista completa a l'entrada."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contacte",
+    "subtitle": "Escriviu-nos",
+    "formName": "Nom",
+    "formEmail": "Email",
+    "formMessage": "Missatge",
+    "formSend": "Enviar",
+    "formSuccess": "Gràcies! Et respondrem aviat.",
+    "email": "hola@qmfest.com",
+    "socialTitle": "Troba'ns"
+  },
+  "program": {
+    "title": "Programa",
+    "subtitle": "Horaris i escenaris",
+    "day": "Dia",
+    "time": "Hora",
+    "stage": "Escenari",
+    "artist": "Artista"
   },
   "about": {
     "title": "Sobre el Festival",
@@ -34,7 +92,36 @@
   "location": {
     "title": "Ubicació",
     "subtitle": "Parc del Fòrum, Barcelona",
-    "description": "Un espai icònic al costat del mar Mediterrani"
+    "description": "Un espai icònic al costat del mar Mediterrani",
+    "mapLink": "https://www.google.com/maps/place/Parc+del+F%C3%B2rum",
+    "gettingThere": "Com arribar-hi",
+    "transport": "Metro: L4 El Maresme | Fòrum. Tram: T4. Bus: 7, 36, 41.",
+    "mapCta": "Veure al mapa"
+  },
+  "legal": {
+    "privacyTitle": "Política de privacitat",
+    "privacyIntro": "QM Fest respecta la teva privacitat. Aquesta política explica com recollim i usem les teves dades.",
+    "privacySections": [
+      "Recollim les dades que ens facilites en comprar entrades (email, nom) i en contactar-nos o subscriure't al newsletter.",
+      "Fem servir aquestes dades per processar comandes, enviar confirmacions i novetats de l'esdeveniment, i per comunicar-nos amb tu.",
+      "No venem les teves dades a tercers. Podem compartir dades amb proveïdors (p. ex. passarel·la de pagament) estrictament necessaris per al servei.",
+      "Pots sol·licitar accés, rectificació o supressió de les teves dades escrivint-nos.",
+      "Última actualització: 2026."
+    ],
+    "cookiesTitle": "Política de galetes",
+    "cookiesIntro": "Fem servir galetes i tecnologies similars al nostre lloc web.",
+    "cookiesSections": [
+      "Galetes essencials: necessàries per al funcionament del lloc (idioma, consentiment).",
+      "Galetes d'analítica: podem fer servir eines per entendre l'ús del lloc (anonimitzat).",
+      "Pots acceptar totes les galetes o només les essencials mitjançant la bannera. Pots canviar la teva elecció després.",
+      "Última actualització: 2026."
+    ]
+  },
+  "cookiesBanner": {
+    "message": "Fem servir galetes per millorar la teva experiència i analítiques.",
+    "link": "Política de galetes",
+    "accept": "Acceptar totes",
+    "decline": "Només essencials"
   },
   "tickets": {
     "title": "Entrades",
