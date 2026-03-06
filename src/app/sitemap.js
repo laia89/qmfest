@@ -1,3 +1,5 @@
+import pastEditions from '@/content/past-events.json'
+
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://qmfest.com'
 const locales = ['en', 'es', 'ca']
 const paths = [
@@ -7,6 +9,7 @@ const paths = [
   '/program',
   '/about',
   '/past-events',
+  ...pastEditions.map((e) => `/past-events/${e.year}`),
   '/accessibility',
   '/sponsors',
   '/press',

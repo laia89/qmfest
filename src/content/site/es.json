@@ -20,10 +20,13 @@
   "pastEvents": {
     "title": "Ediciones anteriores",
     "subtitle": "Las ediciones pasadas del QM Fest",
+    "seeEdition": "Ver edición",
     "date2025": "25 de mayo 2025",
     "date2024": "15 de junio 2024",
     "description2025": "Primera edición en el Parc del Fòrum. Un día de celebración con la mejor música queer y la comunidad LGTBIQ+.",
-    "description2024": "Edición piloto. Dimos vida al festival con artistas locales e internacionales."
+    "description2024": "Edición piloto. Dimos vida al festival con artistas locales e internacionales.",
+    "recapLink": "Ver resumen",
+    "backToPastEvents": "← Todas las ediciones"
   },
   "accessibility": {
     "title": "Accesibilidad",
