@@ -1,14 +1,38 @@
+import { montserrat } from './fonts'
 import './globals.css'
 
 export const metadata = {
-  title: 'QM Fest',
-  description: 'The biggest queer music festival in Barcelona',
+  title: {
+    default: 'QM Fest | Queer Music Festival Barcelona',
+    template: '%s | QM Fest',
+  },
+  description:
+    'The biggest queer music festival in Barcelona. Celebrating diversity through music. Parc del Fòrum.',
+  openGraph: {
+    title: 'QM Fest | Queer Music Festival Barcelona',
+    description:
+      'Celebrating diversity through music. A unique experience for the LGTBIQ+ community.',
+    type: 'website',
+  },
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://qmfest.com',
+  ),
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#7758d4',
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-light">{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${montserrat.variable} min-h-screen bg-festival-cream font-sans antialiased`}
+      >
+        {children}
+      </body>
     </html>
   )
 }

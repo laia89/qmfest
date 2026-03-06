@@ -1,33 +1,28 @@
 import Navigation from '@/components/Navigation'
 import { NextIntlClientProvider } from 'next-intl'
+import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import '../globals.css'
 
-// Import all locale files
-import caMessages from '@/i18n/locales/ca.json'
-import enMessages from '@/i18n/locales/en.json'
-import esMessages from '@/i18n/locales/es.json'
-
-const messages = {
-  en: enMessages,
-  es: esMessages,
-  ca: caMessages,
-}
+const locales = ['en', 'es', 'ca']
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'es' }, { locale: 'ca' }]
+  return locales.map((locale) => ({ locale }))
 }
 
 export default async function LocaleLayout({ children, params }) {
   const resolvedParams = await Promise.resolve(params)
-  const locale = resolvedParams.locale
+  const locale = resolvedParams?.locale
 
-  if (!messages[locale]) {
+  if (!locale || !locales.includes(locale)) {
     notFound()
   }
 
+  setRequestLocale(locale)
+  const messages = await getMessages()
+
   return (
-    <NextIntlClientProvider locale={locale} messages={messages[locale]}>
+    <NextIntlClientProvider locale={locale} messages={messages}>
       <Navigation />
       {children}
     </NextIntlClientProvider>
