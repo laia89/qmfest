@@ -55,7 +55,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           <Link
             href={basePath}
-            className="text-festival-yellow text-xl font-bold font-heading focus:outline-none focus:ring-2 focus:ring-festival-yellow focus:ring-offset-2 focus:ring-offset-festival-purple rounded"
+            className="text-festival-yellow text-xl font-bold font-heading focus:outline-none focus-visible:ring-2 focus-visible:ring-festival-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-festival-purple rounded"
           >
             QM Fest
           </Link>

@@ -62,7 +62,7 @@ export default function TicketsPage() {
                   type="button"
                   onClick={() => handleCheckout('earlyBird')}
                   disabled={!!loading}
-                  className="block w-full bg-festival-yellow hover:bg-festival-yellow/90 text-festival-purple font-bold py-3 px-8 rounded-full text-center transition-colors disabled:opacity-70"
+                  className="block w-full bg-festival-yellow hover:bg-festival-yellow/90 text-festival-purple font-bold py-3 px-8 rounded-full text-center transition-colors disabled:opacity-70 cursor-pointer"
                 >
                   {loading === 'earlyBird' ? '…' : t('cta')}
                 </button>
@@ -87,7 +87,7 @@ export default function TicketsPage() {
                   type="button"
                   onClick={() => handleCheckout('regular')}
                   disabled={!!loading}
-                  className="block w-full bg-festival-purple hover:bg-festival-purple/90 text-festival-cream font-bold py-3 px-8 rounded-full text-center transition-colors disabled:opacity-70"
+                  className="block w-full bg-festival-purple hover:bg-festival-purple/90 text-festival-cream font-bold py-3 px-8 rounded-full text-center transition-colors disabled:opacity-70 cursor-pointer"
                 >
                   {loading === 'regular' ? '…' : t('cta')}
                 </button>
@@ -112,7 +112,7 @@ export default function TicketsPage() {
                   type="button"
                   onClick={() => handleCheckout('vip')}
                   disabled={!!loading}
-                  className="block w-full bg-festival-yellow hover:bg-festival-yellow/90 text-festival-purple font-bold py-3 px-8 rounded-full text-center transition-colors disabled:opacity-70"
+                  className="block w-full bg-festival-yellow hover:bg-festival-yellow/90 text-festival-purple font-bold py-3 px-8 rounded-full text-center transition-colors disabled:opacity-70 cursor-pointer"
                 >
                   {loading === 'vip' ? '…' : t('cta')}
                 </button>

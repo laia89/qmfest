@@ -140,7 +140,7 @@ export default function Home() {
               <p className="text-4xl mb-8">{t('tickets.earlyBirdPrice')}</p>
               <Link
                 href={`/${t('locale')}/tickets`}
-                className="block w-full bg-festival-cream text-festival-purple hover:bg-festival-cream/90 font-bold py-3 px-8 rounded-full text-center transition-colors"
+                className="block w-full bg-festival-cream text-festival-purple hover:bg-festival-cream/90 font-bold py-3 px-8 rounded-full text-center transition-colors cursor-pointer"
               >
                 {t('tickets.cta')}
               </Link>
@@ -150,7 +150,7 @@ export default function Home() {
               <p className="text-4xl mb-8">{t('tickets.regularPrice')}</p>
               <Link
                 href={`/${t('locale')}/tickets`}
-                className="block w-full bg-festival-cream text-festival-purple hover:bg-festival-cream/90 font-bold py-3 px-8 rounded-full text-center transition-colors"
+                className="block w-full bg-festival-cream text-festival-purple hover:bg-festival-cream/90 font-bold py-3 px-8 rounded-full text-center transition-colors cursor-pointer"
               >
                 {t('tickets.cta')}
               </Link>
@@ -160,7 +160,7 @@ export default function Home() {
               <p className="text-4xl mb-8">{t('tickets.vipPrice')}</p>
               <Link
                 href={`/${t('locale')}/tickets`}
-                className="block w-full bg-festival-cream text-festival-purple hover:bg-festival-cream/90 font-bold py-3 px-8 rounded-full text-center transition-colors"
+                className="block w-full bg-festival-cream text-festival-purple hover:bg-festival-cream/90 font-bold py-3 px-8 rounded-full text-center transition-colors cursor-pointer"
               >
                 {t('tickets.cta')}
               </Link>
