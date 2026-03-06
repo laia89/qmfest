@@ -7,6 +7,7 @@ import artists from '@/content/lineup/artists.json'
 
 export default function LineupPage() {
   const t = useTranslations('lineup')
+  const tCommon = useTranslations('common')
   const locale = useLocale()
 
   return (
@@ -88,7 +89,7 @@ export default function LineupPage() {
               href={`/${locale}`}
               className="inline-block bg-festival-purple text-festival-cream hover:bg-festival-purple/90 font-semibold py-3 px-8 rounded-full transition-colors"
             >
-              ← Back to home
+              ← {tCommon('backToHome')}
             </Link>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { getLocale } from 'next-intl/server'
+import { getLocale, getTranslations } from 'next-intl/server'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 
@@ -13,6 +13,7 @@ const markdownComponents = {
 
 export default async function AboutMarkdownView({ data, content }) {
   const locale = await getLocale()
+  const tCommon = await getTranslations('common')
   const values = data?.values || []
 
   return (
@@ -56,7 +57,7 @@ export default async function AboutMarkdownView({ data, content }) {
               href={`/${locale}`}
               className="inline-block bg-festival-purple text-festival-cream hover:bg-festival-purple/90 font-semibold py-3 px-8 rounded-full transition-colors"
             >
-              ← Back to home
+              ← {tCommon('backToHome')}
             </Link>
           </div>
         </div>

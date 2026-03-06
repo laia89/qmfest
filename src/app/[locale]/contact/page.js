@@ -6,6 +6,7 @@ import { useState } from 'react'
 
 export default function ContactPage() {
   const t = useTranslations('contact')
+  const tCommon = useTranslations('common')
   const locale = useLocale()
   const [sent, setSent] = useState(false)
 
@@ -109,7 +110,7 @@ export default function ContactPage() {
               href={`/${locale}`}
               className="inline-block text-festival-purple/80 hover:text-festival-purple font-medium"
             >
-              ← Back to home
+              ← {tCommon('backToHome')}
             </Link>
           </div>
         </div>

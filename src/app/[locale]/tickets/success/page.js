@@ -1,12 +1,13 @@
 'use client'
 
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { Suspense } from 'react'
 
 function SuccessContent() {
   const locale = useLocale()
+  const tCommon = useTranslations('common')
   const searchParams = useSearchParams()
   const sessionId = searchParams.get('session_id')
 
@@ -31,7 +32,7 @@ function SuccessContent() {
             href={`/${locale}`}
             className="inline-block bg-festival-purple text-festival-cream hover:bg-festival-purple/90 font-bold py-3 px-8 rounded-full transition-colors"
           >
-            Back to home
+            {tCommon('backToHome')}
           </Link>
         </div>
       </section>

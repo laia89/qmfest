@@ -4,6 +4,14 @@ import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { useState } from 'react'
 
+const footerNavLinks = [
+  { href: '/past-events', key: 'pastEvents' },
+  { href: '/accessibility', key: 'accessibility' },
+  { href: '/sponsors', key: 'sponsors' },
+  { href: '/press', key: 'press' },
+  { href: '/volunteers', key: 'volunteers' },
+]
+
 const socialLinks = [
   {
     name: 'Instagram',
@@ -17,8 +25,12 @@ const socialLinks = [
   },
 ]
 
+const linkClass =
+  'text-festival-cream/80 hover:text-festival-yellow transition-colors'
+
 export default function Footer() {
   const t = useTranslations('footer')
+  const tNav = useTranslations('navigation')
   const locale = useLocale()
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
@@ -42,8 +54,8 @@ export default function Footer() {
   return (
     <footer className="bg-festival-purple text-festival-cream pt-16 pb-8">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 mb-12">
-          <div>
+        <div className="flex flex-col md:flex-row md:flex-wrap md:items-end gap-10 mb-12">
+          <div className="md:min-w-[280px]">
             <h3 className="text-xl font-heading font-bold text-festival-yellow mb-4">
               {t('newsletterTitle')}
             </h3>
@@ -71,10 +83,21 @@ export default function Footer() {
               </form>
             )}
           </div>
-          <div>
-            <h3 className="text-xl font-heading font-bold text-festival-yellow mb-4">
-              {t('socialTitle')}
-            </h3>
+          <div className="flex flex-wrap gap-x-8 gap-y-4 md:flex-1 md:justify-end">
+            <nav
+              aria-label="Secondary"
+              className="flex flex-wrap gap-x-6 gap-y-1 text-sm"
+            >
+              {footerNavLinks.map((item) => (
+                <Link
+                  key={item.key}
+                  href={`/${locale}${item.href}`}
+                  className={linkClass}
+                >
+                  {tNav(item.key)}
+                </Link>
+              ))}
+            </nav>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
                 <a
@@ -82,7 +105,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-festival-cream/80 hover:text-festival-yellow transition-colors"
+                  className={linkClass}
                   aria-label={social.name}
                 >
                   <svg
@@ -104,22 +127,13 @@ export default function Footer() {
             © {new Date().getFullYear()} QM Fest
           </p>
           <div className="flex gap-6 text-sm">
-            <Link
-              href={`/${locale}/privacy`}
-              className="text-festival-cream/80 hover:text-festival-yellow transition-colors"
-            >
+            <Link href={`/${locale}/privacy`} className={linkClass}>
               {t('privacy')}
             </Link>
-            <Link
-              href={`/${locale}/cookies`}
-              className="text-festival-cream/80 hover:text-festival-yellow transition-colors"
-            >
+            <Link href={`/${locale}/cookies`} className={linkClass}>
               {t('cookies')}
             </Link>
-            <Link
-              href={`/${locale}/contact`}
-              className="text-festival-cream/80 hover:text-festival-yellow transition-colors"
-            >
+            <Link href={`/${locale}/contact`} className={linkClass}>
               {t('contact')}
             </Link>
           </div>

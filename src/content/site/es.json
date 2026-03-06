@@ -6,8 +6,62 @@
     "tickets": "Entradas",
     "program": "Programa",
     "about": "Sobre Nosotros",
+    "pastEvents": "Ediciones anteriores",
+    "accessibility": "Accesibilidad",
+    "sponsors": "Colaboradores",
+    "press": "Prensa",
+    "volunteers": "Voluntariado",
     "faq": "FAQ",
     "contact": "Contacto"
+  },
+  "common": {
+    "backToHome": "Volver al inicio"
+  },
+  "pastEvents": {
+    "title": "Ediciones anteriores",
+    "subtitle": "Las ediciones pasadas del QM Fest",
+    "date2025": "25 de mayo 2025",
+    "date2024": "15 de junio 2024",
+    "description2025": "Primera edición en el Parc del Fòrum. Un día de celebración con la mejor música queer y la comunidad LGTBIQ+.",
+    "description2024": "Edición piloto. Dimos vida al festival con artistas locales e internacionales."
+  },
+  "accessibility": {
+    "title": "Accesibilidad",
+    "subtitle": "Queremos que todo el mundo disfrute del QM Fest. Aquí tienes la información que necesitas.",
+    "gettingThere": "Cómo llegar",
+    "gettingThereDesc": "El Parc del Fòrum es accesible en transporte público. Metro L4 (El Maresme | Fòrum), Tram T4 y buses 7, 36, 41. Hay aparcamiento accesible; contáctanos para más detalles.",
+    "tickets": "Entradas adaptadas",
+    "ticketsDesc": "Ofrecemos plazas accesibles y entradas para acompañantes. Al comprar tu entrada, elige la opción de accesibilidad o escríbenos para organizar el mejor lugar para ti.",
+    "toilets": "Servicios e instalaciones",
+    "toiletsDesc": "Hay aseos accesibles en todo el recinto. Los espacios de cambio y áreas tranquilas están señalizados.",
+    "support": "Puntos de apoyo",
+    "supportDesc": "El equipo de accesibilidad y primeros auxilios estará en puntos bien visibles. No dudes en pedir ayuda a cualquier miembro del equipo.",
+    "contactLink": "Contacta con nosotros",
+    "contactOrEmail": "o escríbenos a"
+  },
+  "sponsors": {
+    "title": "Patrocinadores y colaboradores",
+    "subtitle": "Gracias a quienes hacen posible el QM Fest.",
+    "ctaTitle": "¿Quieres que tu marca colabore con nosotros?",
+    "ctaText": "Si tu marca comparte nuestros valores de diversidad e inclusión y quieres apoyar el festival de música queer más grande de Barcelona, nos encantaría hablar contigo. Hazte partner del QM Fest y llega a un público comprometido e inclusivo.",
+    "ctaLabel": "Contáctanos para colaborar"
+  },
+  "press": {
+    "title": "Prensa",
+    "subtitle": "Kit de prensa y contacto para medios.",
+    "kitTitle": "Kit de prensa",
+    "kitDesc": "Logos, imágenes e información clave del festival. Descarga el pack o contáctanos para material en alta resolución.",
+    "contactTitle": "Contacto de prensa",
+    "contactEmail": "hola@qmfest.com",
+    "logosTitle": "Logos",
+    "logosDesc": "Logos y recursos de marca disponibles bajo demanda. Contáctanos para archivos en alta resolución."
+  },
+  "volunteers": {
+    "title": "Voluntariado",
+    "subtitle": "Únete al equipo y forma parte del QM Fest.",
+    "description": "Buscamos personas comprometidas para ayudar en acreditaciones, puntos de información y atención al público. A cambio obtienes acceso gratuito y el mejor ambiente.",
+    "cta": "Apúntate como voluntario",
+    "formLink": "mailto:hola@qmfest.com?subject=Voluntario%20QM%20Fest"
   },
   "hero": {
     "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=2070&auto=format&fit=crop",
@@ -22,6 +76,7 @@
     "newsletterCta": "Suscribirse",
     "newsletterSuccess": "¡Suscrito! Te escribimos pronto.",
     "socialTitle": "Síguenos",
+    "moreTitle": "Más",
     "privacy": "Privacidad",
     "cookies": "Cookies",
     "contact": "Contacto"

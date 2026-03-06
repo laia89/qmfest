@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 export default function CookiesPage() {
   const t = useTranslations('legal')
+  const tCommon = useTranslations('common')
   const locale = useLocale()
   const sections = t.raw('cookiesSections')
   const list = Array.isArray(sections) ? sections : []
@@ -29,7 +30,7 @@ export default function CookiesPage() {
               href={`/${locale}`}
               className="text-festival-purple font-semibold hover:underline"
             >
-              ← Back to home
+              ← {tCommon('backToHome')}
             </Link>
           </div>
         </div>

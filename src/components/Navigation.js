@@ -7,8 +7,8 @@ import { useCallback, useEffect, useState } from 'react'
 
 const navLinks = [
   { href: '', key: 'home' },
-  { href: '/lineup', key: 'lineup' },
   { href: '/tickets', key: 'tickets' },
+  { href: '/lineup', key: 'lineup' },
   { href: '/program', key: 'program' },
   { href: '/about', key: 'about' },
   { href: '/faq', key: 'faq' },

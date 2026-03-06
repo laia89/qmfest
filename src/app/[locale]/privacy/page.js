@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 export default function PrivacyPage() {
   const t = useTranslations('legal')
+  const tCommon = useTranslations('common')
   const locale = useLocale()
   const sections = t.raw('privacySections')
   const list = Array.isArray(sections) ? sections : []
@@ -29,7 +30,7 @@ export default function PrivacyPage() {
               href={`/${locale}`}
               className="text-festival-purple font-semibold hover:underline"
             >
-              ← Back to home
+              ← {tCommon('backToHome')}
             </Link>
           </div>
         </div>

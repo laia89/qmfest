@@ -6,6 +6,7 @@ export default async function ProgramPage({ params }) {
   const { locale } = await Promise.resolve(params)
   setRequestLocale(locale)
   const t = await getTranslations('program')
+  const tCommon = await getTranslations('common')
 
   return (
     <main className="min-h-screen pt-24 pb-16">
@@ -63,7 +64,7 @@ export default async function ProgramPage({ params }) {
               href={`/${locale}`}
               className="inline-block bg-festival-purple text-festival-cream hover:bg-festival-purple/90 font-semibold py-3 px-8 rounded-full transition-colors"
             >
-              ← Back to home
+              ← {tCommon('backToHome')}
             </Link>
           </div>
         </div>

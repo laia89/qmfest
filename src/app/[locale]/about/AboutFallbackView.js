@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 export default function AboutFallbackView() {
   const t = useTranslations('about')
+  const tCommon = useTranslations('common')
   const locale = useLocale()
 
   return (
@@ -53,7 +54,7 @@ export default function AboutFallbackView() {
               href={`/${locale}`}
               className="inline-block bg-festival-purple text-festival-cream hover:bg-festival-purple/90 font-semibold py-3 px-8 rounded-full transition-colors"
             >
-              ← Back to home
+              ← {tCommon('backToHome')}
             </Link>
           </div>
         </div>

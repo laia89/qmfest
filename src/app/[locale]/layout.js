@@ -1,3 +1,4 @@
+import Analytics from '@/components/Analytics'
 import CookieBanner from '@/components/CookieBanner'
 import Footer from '@/components/Footer'
 import LangAttribute from '@/components/LangAttribute'
@@ -48,6 +49,7 @@ export default async function LocaleLayout({ children, params }) {
       <div className="flex flex-col">{children}</div>
       <Footer />
       <CookieBanner />
+      <Analytics />
     </NextIntlClientProvider>
   )
 }

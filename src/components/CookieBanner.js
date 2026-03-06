@@ -30,6 +30,9 @@ export default function CookieBanner() {
           timestamp: Date.now(),
         }),
       )
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('qmfest-consent-update'))
+      }
     } catch {}
     setVisible(false)
   }

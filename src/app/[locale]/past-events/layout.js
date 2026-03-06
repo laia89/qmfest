@@ -2,11 +2,15 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://qmfest.com'
 
 export async function generateMetadata({ params }) {
   const { locale } = await Promise.resolve(params)
-  const titles = { en: 'Contact', es: 'Contacto', ca: 'Contacte' }
-  const path = 'contact'
+  const titles = {
+    en: 'Past events',
+    es: 'Ediciones anteriores',
+    ca: 'Edicions anteriors',
+  }
+  const path = 'past-events'
   return {
     title: titles[locale] || titles.en,
-    description: 'Get in touch with QM Fest.',
+    description: 'Previous editions of QM Fest. Barcelona.',
     openGraph: {
       title: `${titles[locale] || titles.en} | QM Fest`,
     },
@@ -21,6 +25,6 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default function ContactLayout({ children }) {
+export default function PastEventsLayout({ children }) {
   return children
 }

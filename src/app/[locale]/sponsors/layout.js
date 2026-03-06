@@ -2,14 +2,15 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://qmfest.com'
 
 export async function generateMetadata({ params }) {
   const { locale } = await Promise.resolve(params)
-  const titles = { en: 'Contact', es: 'Contacto', ca: 'Contacte' }
-  const path = 'contact'
+  const titles = {
+    en: 'Sponsors',
+    es: 'Colaboradores',
+    ca: 'Col·laboradors',
+  }
+  const path = 'sponsors'
   return {
     title: titles[locale] || titles.en,
-    description: 'Get in touch with QM Fest.',
-    openGraph: {
-      title: `${titles[locale] || titles.en} | QM Fest`,
-    },
+    description: 'Sponsors and collaborators of QM Fest.',
     alternates: {
       canonical: `${baseUrl}/${locale}/${path}`,
       languages: {
@@ -21,6 +22,6 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default function ContactLayout({ children }) {
+export default function SponsorsLayout({ children }) {
   return children
 }

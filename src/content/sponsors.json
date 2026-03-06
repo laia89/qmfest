@@ -1,0 +1,14 @@
+[
+  {
+    "id": "sponsor-1",
+    "name": "Partner One",
+    "url": "https://example.com",
+    "logo": ""
+  },
+  {
+    "id": "sponsor-2",
+    "name": "Partner Two",
+    "url": "https://example.com",
+    "logo": ""
+  }
+]

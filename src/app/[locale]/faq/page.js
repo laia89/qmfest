@@ -6,6 +6,7 @@ import { useState } from 'react'
 
 export default function FAQPage() {
   const t = useTranslations('faq')
+  const tCommon = useTranslations('common')
   const locale = useLocale()
   const [openIndex, setOpenIndex] = useState(null)
 
@@ -56,7 +57,7 @@ export default function FAQPage() {
               href={`/${locale}`}
               className="inline-block bg-festival-purple text-festival-cream hover:bg-festival-purple/90 font-semibold py-3 px-8 rounded-full transition-colors"
             >
-              ← Back to home
+              ← {tCommon('backToHome')}
             </Link>
           </div>
         </div>
