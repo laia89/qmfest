@@ -36,8 +36,8 @@ export default function TicketsPage() {
   const hasStripe = PRICE_IDS.earlyBird || PRICE_IDS.regular || PRICE_IDS.vip
 
   return (
-    <main className="min-h-screen pt-24 pb-16">
-      <section className="py-16 bg-gradient-to-b from-festival-cream to-festival-purple/10">
+    <main className="pt-24">
+      <section className="py-16 pb-16 bg-gradient-to-b from-festival-cream to-festival-purple/10">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl text-festival-purple mb-4 font-heading">
             {t('title')}

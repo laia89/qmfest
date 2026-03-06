@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${montserrat.variable} min-h-screen bg-festival-cream font-sans antialiased`}
+        className={`${montserrat.variable} bg-festival-cream font-sans antialiased`}
       >
         {children}
       </body>

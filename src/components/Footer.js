@@ -53,7 +53,7 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="px-6 py-2 rounded-lg bg-festival-yellow text-festival-purple font-semibold hover:bg-festival-yellow/90 transition-colors"
+                  className="px-6 py-2 rounded-lg bg-festival-yellow text-festival-purple font-semibold hover:bg-festival-yellow/90 transition-colors cursor-pointer"
                 >
                   {t('newsletterCta')}
                 </button>

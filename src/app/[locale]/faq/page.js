@@ -43,7 +43,7 @@ export default function FAQPage() {
                   </span>
                 </button>
                 {openIndex === index && (
-                  <div className="px-6 pb-4 pt-0 text-festival-purple/80 border-t border-festival-purple/10">
+                  <div className="px-6 pt-4 pb-4 text-festival-purple/80 border-t border-festival-purple/10">
                     {item.a}
                   </div>
                 )}

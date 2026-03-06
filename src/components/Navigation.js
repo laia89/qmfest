@@ -55,7 +55,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           <Link
             href={basePath}
-            className="text-festival-yellow text-xl font-bold font-heading focus:outline-none focus-visible:ring-2 focus-visible:ring-festival-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-festival-purple rounded"
+            className="text-festival-yellow text-xl font-bold font-heading focus:outline-none focus-visible:ring-2 focus-visible:ring-festival-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-festival-purple rounded inline-block transition-[text-shadow] duration-200 hover:[text-shadow:0_0_18px_rgba(255,197,52,0.85)] hover:[animation:logo-pop_0.45s_ease-out] active:scale-95"
           >
             QM Fest
           </Link>

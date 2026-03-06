@@ -43,7 +43,7 @@ export default async function LocaleLayout({ children, params }) {
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
       <Navigation />
-      <div className="flex min-h-screen flex-col">{children}</div>
+      <div className="flex flex-col">{children}</div>
       <Footer />
       <CookieBanner />
     </NextIntlClientProvider>
