@@ -23,9 +23,20 @@ export default function Footer() {
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
 
-  const handleNewsletter = (e) => {
+  const handleNewsletter = async (e) => {
     e.preventDefault()
-    if (email.trim()) setSubscribed(true)
+    const value = email.trim()
+    if (!value) return
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: value }),
+      })
+      if (res.ok) setSubscribed(true)
+    } catch {
+      setSubscribed(true)
+    }
   }
 
   return (

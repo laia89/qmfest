@@ -1,5 +1,6 @@
 import CookieBanner from '@/components/CookieBanner'
 import Footer from '@/components/Footer'
+import LangAttribute from '@/components/LangAttribute'
 import Navigation from '@/components/Navigation'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
@@ -42,6 +43,7 @@ export default async function LocaleLayout({ children, params }) {
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
+      <LangAttribute locale={locale} />
       <Navigation />
       <div className="flex flex-col">{children}</div>
       <Footer />

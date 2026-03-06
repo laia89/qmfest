@@ -11,6 +11,15 @@ export default function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const form = e.target
+    const name = form.name.value
+    const email = form.email.value
+    const message = form.message.value
+    const subject = encodeURIComponent(`[QM Fest] Contact from ${name}`)
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+    )
+    window.location.href = `mailto:${t('email')}?subject=${subject}&body=${body}`
     setSent(true)
   }
 

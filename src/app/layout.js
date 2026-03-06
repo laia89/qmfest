@@ -13,6 +13,7 @@ export const metadata = {
     description:
       'Celebrating diversity through music. A unique experience for the LGTBIQ+ community.',
     type: 'website',
+    images: [{ url: '/icon', width: 32, height: 32, alt: 'QM Fest' }],
   },
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || 'https://qmfest.com',

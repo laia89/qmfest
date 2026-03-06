@@ -11,7 +11,7 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center text-festival-cream overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-festival-purple to-festival-purple/80 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-festival-purple/95 via-festival-purple/85 to-festival-purple/75 z-10" />
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{

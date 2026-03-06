@@ -3,45 +3,7 @@
 import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
-
-const artists = [
-  {
-    id: 'artist-1',
-    name: 'DJ Rainbow',
-    image:
-      'https://images.unsplash.com/photo-1571266028243-d220e8d4a2a4?w=400&h=400&fit=crop',
-    bio: "Electronic music producer and DJ. Resident at Barcelona's best queer parties.",
-    spotifyUrl: 'https://open.spotify.com',
-    instagramUrl: 'https://instagram.com',
-  },
-  {
-    id: 'artist-2',
-    name: 'Soul Collective',
-    image:
-      'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop',
-    bio: 'Live band blending soul, funk and disco. Five-piece from Barcelona.',
-    spotifyUrl: 'https://open.spotify.com',
-    instagramUrl: 'https://instagram.com',
-  },
-  {
-    id: 'artist-3',
-    name: 'Luna Pop',
-    image:
-      'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop',
-    bio: 'Singer-songwriter. Indie pop with queer anthems.',
-    spotifyUrl: 'https://open.spotify.com',
-    instagramUrl: 'https://instagram.com',
-  },
-  {
-    id: 'artist-4',
-    name: 'Bass Queen',
-    image:
-      'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=400&h=400&fit=crop',
-    bio: 'Bass music and drum & bass. International tours and local pride.',
-    spotifyUrl: 'https://open.spotify.com',
-    instagramUrl: 'https://instagram.com',
-  },
-]
+import artists from '@/content/lineup/artists.json'
 
 export default function LineupPage() {
   const t = useTranslations('lineup')
