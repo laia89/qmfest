@@ -8,7 +8,6 @@ import Link from 'next/link'
 
 export default function SponsorsPage() {
   const t = useTranslations('sponsors')
-  const tCommon = useTranslations('common')
   const locale = useLocale()
 
   return (
@@ -63,15 +62,6 @@ export default function SponsorsPage() {
               {t('ctaLabel')}
             </Link>
           </ScrollReveal>
-
-          <div className="text-center mt-16">
-            <Link
-              href={`/${locale}`}
-              className="inline-block text-festival-purple/80 hover:text-festival-purple font-medium"
-            >
-              ← {tCommon('backToHome')}
-            </Link>
-          </div>
         </div>
       </section>
     </main>

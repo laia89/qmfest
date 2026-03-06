@@ -16,7 +16,7 @@ export async function POST(request) {
     const stripe = new Stripe(secretKey, { apiVersion: '2024-11-20.acacia' })
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || request.nextUrl.origin
     const successUrl = `${baseUrl}/${locale}/tickets/success?session_id={CHECKOUT_SESSION_ID}`
-    const cancelUrl = `${baseUrl}/${locale}/tickets`
+    const cancelUrl = `${baseUrl}/${locale}/tickets?canceled=1`
 
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',

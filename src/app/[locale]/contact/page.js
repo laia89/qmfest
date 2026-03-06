@@ -1,27 +1,44 @@
 'use client'
 
-import { useLocale, useTranslations } from 'next-intl'
-import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 
 export default function ContactPage() {
   const t = useTranslations('contact')
-  const tCommon = useTranslations('common')
-  const locale = useLocale()
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const form = e.target
-    const name = form.name.value
-    const email = form.email.value
-    const message = form.message.value
-    const subject = encodeURIComponent(`[QM Fest] Contact from ${name}`)
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-    )
-    window.location.href = `mailto:${t('email')}?subject=${subject}&body=${body}`
-    setSent(true)
+    const name = form.name.value.trim()
+    const email = form.email.value.trim()
+    const message = form.message.value.trim()
+    if (!name || !email || !message) return
+
+    setSending(true)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message }),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (res.ok) {
+        setSent(true)
+        return
+      }
+      throw new Error(data.error || 'Send failed')
+    } catch {
+      const subject = encodeURIComponent(`[QM Fest] Contact from ${name}`)
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+      )
+      window.location.href = `mailto:${t('email')}?subject=${subject}&body=${body}`
+      setSent(true)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -88,9 +105,10 @@ export default function ContactPage() {
               </div>
               <button
                 type="submit"
-                className="w-full py-3 px-6 rounded-full bg-festival-purple text-festival-cream font-bold hover:bg-festival-purple/90 transition-colors focus:outline-none focus:ring-2 focus:ring-festival-yellow"
+                disabled={sending}
+                className="w-full py-3 px-6 rounded-full bg-festival-purple text-festival-cream font-bold hover:bg-festival-purple/90 transition-colors focus:outline-none focus:ring-2 focus:ring-festival-yellow disabled:opacity-70 cursor-pointer"
               >
-                {t('formSend')}
+                {sending ? '…' : t('formSend')}
               </button>
             </form>
           )}
@@ -103,15 +121,6 @@ export default function ContactPage() {
             >
               {t('email')}
             </a>
-          </div>
-
-          <div className="text-center mt-8">
-            <Link
-              href={`/${locale}`}
-              className="inline-block text-festival-purple/80 hover:text-festival-purple font-medium"
-            >
-              ← {tCommon('backToHome')}
-            </Link>
           </div>
         </div>
       </section>

@@ -60,8 +60,18 @@
     "title": "Volunteers",
     "subtitle": "Join the team and be part of QM Fest.",
     "description": "We are looking for committed people to help with accreditation, info points, and audience care. In return you get free access and the best atmosphere.",
-    "cta": "Sign up as volunteer",
-    "formLink": "mailto:hola@qmfest.com?subject=Volunteer%20QM%20Fest"
+    "formTitle": "Sign up",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formInterest": "Area of interest",
+    "interestPlaceholder": "Choose one",
+    "interestAccreditation": "Accreditation",
+    "interestInfo": "Info points",
+    "interestAudience": "Audience care",
+    "interestOther": "Other",
+    "formMessage": "Why do you want to volunteer? (optional)",
+    "formSubmit": "Send",
+    "formSuccess": "Thank you! We'll get back to you soon."
   },
   "hero": {
     "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=2070&auto=format&fit=crop",
@@ -124,7 +134,8 @@
     "day": "Day",
     "time": "Time",
     "stage": "Stage",
-    "artist": "Artist"
+    "artist": "Artist",
+    "allStages": "All stages"
   },
   "location": {
     "title": "Location",
@@ -151,7 +162,10 @@
   "lineup": {
     "title": "Line-up",
     "subtitle": "Discover the artists that will make the festival vibrate",
-    "cta": "See all artists"
+    "cta": "See all artists",
+    "pastEditionsText": "Want to see who played in previous editions?",
+    "pastEditionsLink": "See past editions",
+    "editionBadge": "2026"
   },
   "legal": {
     "privacyTitle": "Privacy Policy",
@@ -187,6 +201,7 @@
     "regularPrice": "35€",
     "vip": "VIP",
     "vipPrice": "75€",
-    "cta": "Buy now"
+    "cta": "Buy now",
+    "canceledMessage": "You canceled the purchase. You can try again whenever you like."
   }
 }

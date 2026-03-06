@@ -1,12 +1,9 @@
 'use client'
 
-import { useLocale, useTranslations } from 'next-intl'
-import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 export default function AboutFallbackView() {
   const t = useTranslations('about')
-  const tCommon = useTranslations('common')
-  const locale = useLocale()
 
   return (
     <main className="min-h-screen pt-24 pb-16">
@@ -47,15 +44,6 @@ export default function AboutFallbackView() {
                 {t('values.artDesc')}
               </p>
             </div>
-          </div>
-
-          <div className="text-center mt-16">
-            <Link
-              href={`/${locale}`}
-              className="inline-block bg-festival-purple text-festival-cream hover:bg-festival-purple/90 font-semibold py-3 px-8 rounded-full transition-colors"
-            >
-              ← {tCommon('backToHome')}
-            </Link>
           </div>
         </div>
       </section>

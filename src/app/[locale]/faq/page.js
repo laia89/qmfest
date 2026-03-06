@@ -1,13 +1,10 @@
 'use client'
 
-import { useLocale, useTranslations } from 'next-intl'
-import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 
 export default function FAQPage() {
   const t = useTranslations('faq')
-  const tCommon = useTranslations('common')
-  const locale = useLocale()
   const [openIndex, setOpenIndex] = useState(null)
 
   const items = t.raw('items')
@@ -50,15 +47,6 @@ export default function FAQPage() {
                 )}
               </div>
             ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href={`/${locale}`}
-              className="inline-block bg-festival-purple text-festival-cream hover:bg-festival-purple/90 font-semibold py-3 px-8 rounded-full transition-colors"
-            >
-              ← {tCommon('backToHome')}
-            </Link>
           </div>
         </div>
       </section>

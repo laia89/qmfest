@@ -1,7 +1,8 @@
 'use client'
 
 import { useLocale, useTranslations } from 'next-intl'
-import { useState } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { Suspense, useState } from 'react'
 
 const PRICE_IDS = {
   earlyBird: process.env.NEXT_PUBLIC_STRIPE_EARLY_BIRD_PRICE_ID,
@@ -9,10 +10,12 @@ const PRICE_IDS = {
   vip: process.env.NEXT_PUBLIC_STRIPE_VIP_PRICE_ID,
 }
 
-export default function TicketsPage() {
+function TicketsContent() {
   const t = useTranslations('tickets')
   const locale = useLocale()
+  const searchParams = useSearchParams()
   const [loading, setLoading] = useState(null)
+  const canceled = searchParams.get('canceled') === '1'
 
   const handleCheckout = async (type) => {
     const priceId = PRICE_IDS[type]
@@ -22,7 +25,7 @@ export default function TicketsPage() {
       const res = await fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ priceId, quantity: 1, locale }),
+        body: JSON.stringify({ priceId, quantity: 1, locale: locale || 'en' }),
       })
       const data = await res.json()
       if (data.url) window.location.href = data.url
@@ -36,8 +39,8 @@ export default function TicketsPage() {
   const hasStripe = PRICE_IDS.earlyBird || PRICE_IDS.regular || PRICE_IDS.vip
 
   return (
-    <main className="pt-24">
-      <section className="py-16 pb-16 bg-gradient-to-b from-festival-cream to-festival-purple/10">
+    <main className="min-h-screen pt-24 pb-16">
+      <section className="py-16 bg-festival-cream">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl text-festival-purple mb-4 font-heading">
             {t('title')}
@@ -45,6 +48,12 @@ export default function TicketsPage() {
           <p className="text-xl text-festival-purple/80 max-w-2xl mx-auto mb-16">
             {t('subtitle')}
           </p>
+
+          {canceled && (
+            <p className="mb-8 mx-auto max-w-xl px-4 py-3 rounded-xl bg-festival-purple/10 text-festival-purple border border-festival-purple/20">
+              {t('canceledMessage')}
+            </p>
+          )}
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="bg-white rounded-2xl shadow-lg p-8 border-2 border-festival-yellow/30 hover:border-festival-yellow transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
@@ -133,5 +142,13 @@ export default function TicketsPage() {
         </div>
       </section>
     </main>
+  )
+}
+
+export default function TicketsPage() {
+  return (
+    <Suspense fallback={null}>
+      <TicketsContent />
+    </Suspense>
   )
 }

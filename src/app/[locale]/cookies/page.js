@@ -1,12 +1,9 @@
 'use client'
 
-import { useLocale, useTranslations } from 'next-intl'
-import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 export default function CookiesPage() {
   const t = useTranslations('legal')
-  const tCommon = useTranslations('common')
-  const locale = useLocale()
   const sections = t.raw('cookiesSections')
   const list = Array.isArray(sections) ? sections : []
 
@@ -25,14 +22,6 @@ export default function CookiesPage() {
               <li key={i}>{paragraph}</li>
             ))}
           </ul>
-          <div className="mt-12">
-            <Link
-              href={`/${locale}`}
-              className="text-festival-purple font-semibold hover:underline"
-            >
-              ← {tCommon('backToHome')}
-            </Link>
-          </div>
         </div>
       </section>
     </main>

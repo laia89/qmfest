@@ -1,12 +1,9 @@
 'use client'
 
-import { useLocale, useTranslations } from 'next-intl'
-import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 export default function PressPage() {
   const t = useTranslations('press')
-  const tCommon = useTranslations('common')
-  const locale = useLocale()
 
   return (
     <main className="min-h-screen pt-24 pb-16">
@@ -46,15 +43,6 @@ export default function PressPage() {
               </h2>
               <p className="text-festival-purple/80">{t('logosDesc')}</p>
             </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href={`/${locale}`}
-              className="inline-block text-festival-purple/80 hover:text-festival-purple font-medium"
-            >
-              ← {tCommon('backToHome')}
-            </Link>
           </div>
         </div>
       </section>

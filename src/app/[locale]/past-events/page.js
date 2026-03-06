@@ -2,14 +2,11 @@
 
 import ScrollReveal from '@/components/ScrollReveal'
 import pastEditions from '@/content/past-events.json'
-import { useLocale, useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import Link from 'next/link'
 
 export default function PastEventsPage() {
   const t = useTranslations('pastEvents')
-  const tCommon = useTranslations('common')
-  const locale = useLocale()
 
   return (
     <main className="min-h-screen pt-24 pb-16">
@@ -62,15 +59,6 @@ export default function PastEventsPage() {
                 </article>
               </ScrollReveal>
             ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href={`/${locale}`}
-              className="inline-block text-festival-purple/80 hover:text-festival-purple font-medium"
-            >
-              ← {tCommon('backToHome')}
-            </Link>
           </div>
         </div>
       </section>

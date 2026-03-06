@@ -1,13 +1,12 @@
 'use client'
 
+import artists from '@/content/lineup/artists.json'
 import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
-import artists from '@/content/lineup/artists.json'
 
 export default function LineupPage() {
   const t = useTranslations('lineup')
-  const tCommon = useTranslations('common')
   const locale = useLocale()
 
   return (
@@ -84,14 +83,14 @@ export default function LineupPage() {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <p className="text-center mt-14 mb-4">
             <Link
-              href={`/${locale}`}
-              className="inline-block bg-festival-purple text-festival-cream hover:bg-festival-purple/90 font-semibold py-3 px-8 rounded-full transition-colors"
+              href={`/${locale}/past-events`}
+              className="inline-block text-festival-purple/80 hover:text-festival-purple font-medium border-b-2 border-festival-purple/40 hover:border-festival-purple transition-colors pb-0.5"
             >
-              ← {tCommon('backToHome')}
+              {t('pastEditionsLink')} →
             </Link>
-          </div>
+          </p>
         </div>
       </section>
     </main>

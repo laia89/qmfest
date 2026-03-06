@@ -5,7 +5,6 @@ import Link from 'next/link'
 
 export default function AccessibilityPage() {
   const t = useTranslations('accessibility')
-  const tCommon = useTranslations('common')
   const locale = useLocale()
 
   return (
@@ -61,15 +60,6 @@ export default function AccessibilityPage() {
               hola@qmfest.com
             </a>
           </p>
-
-          <div className="text-center mt-8">
-            <Link
-              href={`/${locale}`}
-              className="inline-block text-festival-purple/80 hover:text-festival-purple font-medium"
-            >
-              ← {tCommon('backToHome')}
-            </Link>
-          </div>
         </div>
       </section>
     </main>

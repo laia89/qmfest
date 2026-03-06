@@ -60,8 +60,18 @@
     "title": "Voluntariado",
     "subtitle": "Únete al equipo y forma parte del QM Fest.",
     "description": "Buscamos personas comprometidas para ayudar en acreditaciones, puntos de información y atención al público. A cambio obtienes acceso gratuito y el mejor ambiente.",
-    "cta": "Apúntate como voluntario",
-    "formLink": "mailto:hola@qmfest.com?subject=Voluntario%20QM%20Fest"
+    "formTitle": "Apúntate",
+    "formName": "Nombre",
+    "formEmail": "Email",
+    "formInterest": "Área de interés",
+    "interestPlaceholder": "Elige uno",
+    "interestAccreditation": "Acreditaciones",
+    "interestInfo": "Puntos de información",
+    "interestAudience": "Atención al público",
+    "interestOther": "Otro",
+    "formMessage": "¿Por qué quieres ser voluntario/a? (opcional)",
+    "formSubmit": "Enviar",
+    "formSuccess": "¡Gracias! Te responderemos pronto."
   },
   "hero": {
     "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=2070&auto=format&fit=crop",
@@ -124,7 +134,8 @@
     "day": "Día",
     "time": "Hora",
     "stage": "Escenario",
-    "artist": "Artista"
+    "artist": "Artista",
+    "allStages": "Todos los escenarios"
   },
   "about": {
     "title": "Sobre el Festival",
@@ -142,7 +153,10 @@
   "lineup": {
     "title": "Line-up",
     "subtitle": "Descubre los artistas que harán vibrar el festival",
-    "cta": "Ver todos los artistas"
+    "cta": "Ver todos los artistas",
+    "pastEditionsText": "¿Quieres ver quién tocó en ediciones anteriores?",
+    "pastEditionsLink": "Ver ediciones anteriores",
+    "editionBadge": "2026"
   },
   "location": {
     "title": "Ubicación",
@@ -187,6 +201,7 @@
     "regularPrice": "35€",
     "vip": "VIP",
     "vipPrice": "75€",
-    "cta": "Comprar ahora"
+    "cta": "Comprar ahora",
+    "canceledMessage": "Has cancelado la compra. Puedes intentarlo de nuevo cuando quieras."
   }
 }
