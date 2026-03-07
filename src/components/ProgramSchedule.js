@@ -91,7 +91,7 @@ export default function ProgramSchedule({
       </div>
 
       <p className="text-center text-festival-purple/60 text-sm">
-        {dayLabel} 1 — 25 May 2026 · Parc del Fòrum, Barcelona
+        {dayLabel} 1 — 25 May 2026 · Sala Apolo, Barcelona
       </p>
     </div>
   )

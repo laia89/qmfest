@@ -100,7 +100,7 @@
     "items": [
       {
         "q": "Quan i on és el festival?",
-        "a": "Dissabte 25 de maig de 2026 al Parc del Fòrum, Barcelona. Portes a les 16h."
+        "a": "Dissabte 25 de maig de 2026 a la Sala Apolo, Barcelona. Portes a les 16h."
       },
       {
         "q": "Com compro entrades?",
@@ -163,14 +163,15 @@
   },
   "location": {
     "title": "Ubicació",
-    "subtitle": "Parc del Fòrum, Barcelona",
-    "description": "Un espai icònic al costat del mar Mediterrani",
-    "mapLink": "https://www.google.com/maps/place/Parc+del+F%C3%B2rum",
+    "subtitle": "Sala Apolo, Barcelona",
+    "description": "Una sala de referència al Poble-sec, al cor de Barcelona",
+    "image": "/images/sala-apolo-exterior.png",
+    "mapLink": "https://www.google.com/maps/place/Sala+Apolo",
     "gettingThere": "Com arribar-hi",
-    "transport": "Metro: L4 El Maresme | Fòrum. Tram: T4. Bus: 7, 36, 41.",
-    "metro": "Metro L4 · El Maresme | Fòrum",
-    "tram": "Tram T4",
-    "bus": "Bus 7, 36, 41",
+    "transport": "Metro L2 i L3 Paral·lel. Bus 21, 88, D20.",
+    "metro": "Metro L2 i L3 · Paral·lel",
+    "tram": "—",
+    "bus": "Bus 21, 88, D20, H14, V11",
     "mapCta": "Veure al mapa"
   },
   "legal": {

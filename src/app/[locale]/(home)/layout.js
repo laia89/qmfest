@@ -12,9 +12,10 @@ const eventJsonLd = {
   eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
   location: {
     '@type': 'Place',
-    name: 'Parc del Fòrum',
+    name: 'Sala Apolo',
     address: {
       '@type': 'PostalAddress',
+      streetAddress: 'Carrer Nou de la Rambla 113',
       addressLocality: 'Barcelona',
       addressCountry: 'ES',
     },

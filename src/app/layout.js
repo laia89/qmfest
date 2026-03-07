@@ -7,7 +7,7 @@ export const metadata = {
     template: '%s | QM Fest',
   },
   description:
-    'The biggest queer music festival in Barcelona. Celebrating diversity through music. Parc del Fòrum.',
+    'The biggest queer music festival in Barcelona. Celebrating diversity through music. Sala Apolo.',
   openGraph: {
     title: 'QM Fest | Queer Music Festival Barcelona',
     description:

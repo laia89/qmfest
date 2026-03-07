@@ -1,13 +1,18 @@
 'use client'
 
+import { Bus, MapPin, TrainFrontTunnel } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 
-const VENUE_IMAGE =
-  'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80'
+// Imatge per defecte del lloc. Es pot canviar des del contingut (location.image).
+const DEFAULT_VENUE_IMAGE =
+  'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800&q=80'
+
+const iconClass = 'w-5 h-5 text-festival-purple/60 shrink-0'
 
 export default function LocationBlock() {
   const t = useTranslations('location')
+  const imageUrl = t('image') || DEFAULT_VENUE_IMAGE
 
   return (
     <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-center max-w-5xl mx-auto">
@@ -25,20 +30,14 @@ export default function LocationBlock() {
         </p>
         <ul className="space-y-2 text-festival-purple/80 text-sm mb-8">
           <li className="flex items-center gap-3">
-            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-festival-purple/10 text-festival-purple font-bold text-xs shrink-0">
-              M
+            <span className="flex items-center justify-center w-9 h-9 shrink-0 rounded-full bg-festival-purple/5">
+              <TrainFrontTunnel className={iconClass} />
             </span>
             {t('metro')}
           </li>
           <li className="flex items-center gap-3">
-            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-festival-purple/10 text-festival-purple font-bold text-xs shrink-0">
-              T
-            </span>
-            {t('tram')}
-          </li>
-          <li className="flex items-center gap-3">
-            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-festival-purple/10 text-festival-purple font-bold text-xs shrink-0">
-              B
+            <span className="flex items-center justify-center w-9 h-9 shrink-0 rounded-full bg-festival-purple/5">
+              <Bus className={iconClass} />
             </span>
             {t('bus')}
           </li>
@@ -50,7 +49,7 @@ export default function LocationBlock() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-festival-purple text-festival-cream hover:bg-festival-purple/90 font-semibold py-3 px-6 rounded-full transition-colors"
         >
-          <MapPinIcon />
+          <MapPin className="w-5 h-5 shrink-0" />
           {t('mapCta')}
         </a>
       </div>
@@ -63,44 +62,31 @@ export default function LocationBlock() {
       >
         <div className="aspect-[4/3] relative">
           <Image
-            src={VENUE_IMAGE}
-            alt="Parc del Fòrum, Barcelona"
+            src={imageUrl}
+            alt={t('subtitle')}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-festival-purple/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
           <div className="absolute bottom-4 left-4 right-4 flex items-center justify-center gap-2 py-2 rounded-lg bg-festival-cream/90 text-festival-purple font-semibold text-sm">
-            <MapPinIcon />
+            <MapPin className="w-5 h-5 shrink-0" />
             {t('mapCta')}
           </div>
         </div>
       </a>
+      {imageUrl.includes('wikimedia') && (
+        <p className="text-right text-festival-purple/50 text-xs mt-2">
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Nou_de_la_Rambla_107-113.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-festival-purple/70"
+          >
+            Foto: Xavier Badia Castellà, CC BY-SA 3.0
+          </a>
+        </p>
+      )}
     </div>
-  )
-}
-
-function MapPinIcon() {
-  return (
-    <svg
-      className="w-5 h-5 shrink-0"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      aria-hidden
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-      />
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-      />
-    </svg>
   )
 }

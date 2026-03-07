@@ -23,8 +23,7 @@ export async function generateMetadata({ params }) {
   }
   return {
     title: titles[locale] || titles.en,
-    description:
-      'Celebrating diversity through music. Parc del Fòrum, Barcelona.',
+    description: 'Celebrating diversity through music. Sala Apolo, Barcelona.',
     openGraph: {
       locale: locale === 'ca' ? 'ca_ES' : locale === 'es' ? 'es_ES' : 'en_US',
     },
