@@ -100,7 +100,7 @@ export default function FloatingMascot({
         setVisible(true)
       }
     },
-    [visible],
+    [visible, heroRef],
   )
 
   const handleMouseLeave = useCallback(() => {

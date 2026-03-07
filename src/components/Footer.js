@@ -1,6 +1,7 @@
 'use client'
 
 import { useLocale, useTranslations } from 'next-intl'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -123,7 +124,15 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/20 pt-10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-festival-cream/70 text-sm">
+          <p className="text-festival-cream/70 text-sm flex items-center gap-2">
+            <Image
+              src="/images/logo-mascota.png"
+              alt=""
+              width={28}
+              height={34}
+              className="h-7 w-auto object-contain opacity-90"
+              unoptimized
+            />
             © {new Date().getFullYear()} QM Fest
           </p>
           <div className="flex gap-6 text-sm">
