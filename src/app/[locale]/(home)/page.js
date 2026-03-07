@@ -36,7 +36,7 @@ export default function Home() {
           handlersRef={mascotHandlersRef}
         />
         <div className="container mx-auto px-4 relative z-20 text-center">
-          <h1 className="text-festival-yellow text-5xl md:text-7xl mb-4 animate-fade-in">
+          <h1 className="text-festival-yellow text-5xl md:text-7xl mb-4 animate-fade-in leading-relaxed md:leading-tight">
             Queer Music Fest
           </h1>
           <p className="text-2xl md:text-4xl mb-6 animate-fade-in-delay-1">

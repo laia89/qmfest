@@ -36,6 +36,11 @@ export default function Navigation() {
 
   const closeMenu = useCallback(() => setMenuOpen(false), [])
 
+  const getMobileLangClass = (langCode) =>
+    locale === langCode
+      ? 'text-festival-yellow bg-white/10'
+      : 'text-white/80 hover:text-festival-yellow hover:bg-white/5'
+
   useEffect(() => {
     if (!menuOpen) return
     const handleEscape = (e) => e.key === 'Escape' && closeMenu()
@@ -56,14 +61,14 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           <Link
             href={basePath}
-            className="flex items-center gap-2 text-festival-yellow text-xl font-bold font-heading focus:outline-none focus-visible:ring-2 focus-visible:ring-festival-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-festival-purple rounded inline-flex transition-[text-shadow] duration-200 hover:[text-shadow:0_0_18px_rgba(255,197,52,0.85)] hover:[animation:logo-pop_0.45s_ease-out] active:scale-95"
+            className="inline-flex items-center gap-1.5 text-festival-yellow text-xl font-bold font-heading focus:outline-none focus-visible:ring-2 focus-visible:ring-festival-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-festival-purple rounded transition-[text-shadow] duration-200 hover:[text-shadow:0_0_18px_rgba(255,197,52,0.85)] hover:[animation:logo-pop_0.45s_ease-out] active:scale-95"
           >
             <Image
-              src="/images/logo-mascota.png"
+              src="/images/logo-mascota-no-fil.png"
               alt=""
-              width={40}
-              height={48}
-              className="h-9 w-auto object-contain"
+              width={64}
+              height={64}
+              className="h-16 w-auto object-contain shrink-0 -mt-5"
               unoptimized
             />
             <span>QM Fest</span>
@@ -101,40 +106,55 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            type="button"
-            className="md:hidden p-2 text-white hover:text-festival-yellow focus:outline-none focus:ring-2 focus:ring-festival-yellow rounded"
-            onClick={() => setMenuOpen((o) => !o)}
-            aria-expanded={menuOpen}
-            aria-controls="mobile-menu"
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          >
-            <span className="sr-only">{menuOpen ? 'Close' : 'Menu'}</span>
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden
+          {/* Mobile: idiomes a la barra + botó menú (amagat a desktop) */}
+          <div className="md:hidden flex items-center gap-1">
+            {languages.map((lang) => (
+              <Link
+                key={lang.code}
+                href={pathname.replace('/' + locale, '/' + lang.code)}
+                className={
+                  'text-sm font-medium py-2 px-2.5 rounded focus:outline-none focus:ring-2 focus:ring-festival-yellow focus:ring-offset-2 focus:ring-offset-festival-purple min-w-[2.25rem] text-center ' +
+                  getMobileLangClass(lang.code)
+                }
+                aria-label={'Switch to ' + lang.name}
+              >
+                {lang.code.toUpperCase()}
+              </Link>
+            ))}
+            <button
+              type="button"
+              className="p-2 text-white hover:text-festival-yellow focus:outline-none focus:ring-2 focus:ring-festival-yellow rounded"
+              onClick={() => setMenuOpen((o) => !o)}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-menu"
+              aria-label={menuOpen ? 'Tancar menú' : 'Obrir menú'}
             >
-              {menuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
+              <span className="sr-only">{menuOpen ? 'Close' : 'Menu'}</span>
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden
+              >
+                {menuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu */}

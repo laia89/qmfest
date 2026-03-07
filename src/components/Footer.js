@@ -55,6 +55,20 @@ export default function Footer() {
   return (
     <footer className="bg-festival-purple text-festival-cream pt-16 pb-8">
       <div className="container mx-auto px-4">
+        <Link
+          href={`/${locale}`}
+          className="inline-flex items-center gap-1 text-festival-yellow font-heading font-bold text-xl mb-10 hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-festival-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-festival-purple rounded"
+        >
+          <Image
+            src="/images/logo-mascota-no-fil.png"
+            alt=""
+            width={80}
+            height={80}
+            className="h-20 w-auto object-contain shrink-0 -mt-5"
+            unoptimized
+          />
+          <span>QM Fest</span>
+        </Link>
         <div className="flex flex-col md:flex-row md:flex-wrap md:items-end gap-10 mb-16">
           <div className="md:min-w-[280px]">
             <h3 className="text-xl font-heading font-bold text-festival-yellow mb-4">
@@ -126,11 +140,11 @@ export default function Footer() {
         <div className="border-t border-white/20 pt-10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-festival-cream/70 text-sm flex items-center gap-2">
             <Image
-              src="/images/logo-mascota.png"
+              src="/images/logo-mascota-no-fil.png"
               alt=""
-              width={28}
-              height={34}
-              className="h-7 w-auto object-contain opacity-90"
+              width={44}
+              height={44}
+              className="h-11 w-auto object-contain opacity-90 shrink-0 -mt-2.5"
               unoptimized
             />
             © {new Date().getFullYear()} QM Fest
