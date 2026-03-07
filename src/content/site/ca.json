@@ -168,6 +168,9 @@
     "mapLink": "https://www.google.com/maps/place/Parc+del+F%C3%B2rum",
     "gettingThere": "Com arribar-hi",
     "transport": "Metro: L4 El Maresme | Fòrum. Tram: T4. Bus: 7, 36, 41.",
+    "metro": "Metro L4 · El Maresme | Fòrum",
+    "tram": "Tram T4",
+    "bus": "Bus 7, 36, 41",
     "mapCta": "Veure al mapa"
   },
   "legal": {

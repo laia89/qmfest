@@ -1,5 +1,7 @@
 'use client'
 
+import LineupPreview from '@/components/LineupPreview'
+import LocationBlock from '@/components/LocationBlock'
 import ScrollReveal from '@/components/ScrollReveal'
 import WavyDivider from '@/components/WavyDivider'
 import { useTranslations } from 'next-intl'
@@ -100,20 +102,10 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      {/* Line-up Preview — qui toca */}
-      <section className="py-20 bg-gradient-to-b from-festival-purple to-festival-yellow text-festival-cream">
-        <ScrollReveal
-          className="container mx-auto px-4 text-center"
-          delay={0.1}
-        >
-          <h2 className="text-4xl mb-4">{t('lineup.title')}</h2>
-          <p className="text-xl mb-12">{t('lineup.subtitle')}</p>
-          <Link
-            href={`/${t('locale')}/lineup`}
-            className="inline-block bg-festival-cream text-festival-purple hover:bg-festival-cream/90 font-bold py-3 px-8 rounded-full transition-colors"
-          >
-            {t('lineup.cta')}
-          </Link>
+      {/* Line-up Preview — artistes + CTA */}
+      <section className="py-20 bg-gradient-to-b from-festival-purple via-festival-purple/95 to-festival-yellow/90 text-festival-cream">
+        <ScrollReveal delay={0.1}>
+          <LineupPreview />
         </ScrollReveal>
       </section>
 
@@ -158,33 +150,8 @@ export default function Home() {
 
       {/* Location — on i com arribar */}
       <section className="py-20 bg-festival-cream">
-        <ScrollReveal
-          className="container mx-auto px-4 text-center"
-          delay={0.1}
-        >
-          <h2 className="text-4xl text-festival-purple mb-4">
-            {t('location.title')}
-          </h2>
-          <p className="text-2xl text-festival-purple/80 mb-4">
-            {t('location.subtitle')}
-          </p>
-          <p className="text-xl text-festival-purple/60 mb-6">
-            {t('location.description')}
-          </p>
-          <p className="text-festival-purple/80 font-medium mb-2">
-            {t('location.gettingThere')}
-          </p>
-          <p className="text-festival-purple/70 text-sm mb-4">
-            {t('location.transport')}
-          </p>
-          <a
-            href={t('location.mapLink')}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-festival-purple text-festival-cream hover:bg-festival-purple/90 font-semibold py-2 px-6 rounded-full transition-colors"
-          >
-            {t('location.mapCta')}
-          </a>
+        <ScrollReveal className="container mx-auto px-4" delay={0.1}>
+          <LocationBlock />
         </ScrollReveal>
       </section>
     </main>
