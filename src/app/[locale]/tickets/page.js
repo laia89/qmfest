@@ -129,13 +129,6 @@ function TicketsContent() {
               )}
             </div>
           </div>
-
-          {!hasStripe && (
-            <p className="mt-12 text-festival-purple/60 text-sm">
-              Ticket sales open soon. Configure Stripe price IDs in .env to
-              enable checkout.
-            </p>
-          )}
         </div>
       </section>
     </main>
