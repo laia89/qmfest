@@ -1,25 +1,39 @@
 'use client'
 
+import FloatingMascot from '@/components/FloatingMascot'
 import LineupPreview from '@/components/LineupPreview'
 import LocationBlock from '@/components/LocationBlock'
 import ScrollReveal from '@/components/ScrollReveal'
 import WavyDivider from '@/components/WavyDivider'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
+import { useRef } from 'react'
 
 export default function Home() {
   const t = useTranslations()
+  const heroRef = useRef(null)
+  const mascotHandlersRef = useRef(null)
 
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center text-festival-cream overflow-hidden">
+      <section
+        ref={heroRef}
+        onMouseMove={(e) => mascotHandlersRef.current?.onMouseMove(e)}
+        onMouseLeave={() => mascotHandlersRef.current?.onMouseLeave?.()}
+        className="relative h-screen flex items-center justify-center text-festival-cream overflow-hidden"
+      >
         <div className="absolute inset-0 bg-gradient-to-b from-festival-purple/95 via-festival-purple/85 to-festival-purple/75 z-10" />
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url('${t('hero.image')}')`,
           }}
+        />
+        <FloatingMascot
+          mascotSrc="/images/logo-mascota.png"
+          heroRef={heroRef}
+          handlersRef={mascotHandlersRef}
         />
         <div className="container mx-auto px-4 relative z-20 text-center">
           <h1 className="text-festival-yellow text-5xl md:text-7xl mb-4 animate-fade-in">
