@@ -7,11 +7,9 @@ export default function AboutFallbackView() {
 
   return (
     <main className="min-h-screen pt-24 pb-16">
-      <section className="py-16 bg-festival-cream">
+      <section className="py-20 bg-festival-cream">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl text-festival-purple text-center mb-12">
-            {t('title')}
-          </h1>
+          <h1 className="page-title mb-12">{t('title')}</h1>
           <p className="text-xl text-festival-purple/80 max-w-3xl mx-auto text-center mb-16 leading-relaxed">
             {t('description')}
           </p>

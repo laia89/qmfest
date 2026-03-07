@@ -54,7 +54,7 @@ export default function Footer() {
   return (
     <footer className="bg-festival-purple text-festival-cream pt-16 pb-8">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row md:flex-wrap md:items-end gap-10 mb-12">
+        <div className="flex flex-col md:flex-row md:flex-wrap md:items-end gap-10 mb-16">
           <div className="md:min-w-[280px]">
             <h3 className="text-xl font-heading font-bold text-festival-yellow mb-4">
               {t('newsletterTitle')}
@@ -76,7 +76,7 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="px-6 py-2 rounded-lg bg-festival-yellow text-festival-purple font-semibold hover:bg-festival-yellow/90 transition-colors cursor-pointer"
+                  className="px-6 py-2 rounded-full bg-festival-yellow text-festival-purple font-semibold hover:bg-festival-yellow/90 transition-colors cursor-pointer"
                 >
                   {t('newsletterCta')}
                 </button>
@@ -122,7 +122,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/20 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="border-t border-white/20 pt-10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-festival-cream/70 text-sm">
             © {new Date().getFullYear()} QM Fest
           </p>

@@ -9,11 +9,9 @@ export default function CookiesPage() {
 
   return (
     <main className="min-h-screen pt-24 pb-16">
-      <section className="py-16 bg-festival-cream">
+      <section className="py-20 bg-festival-cream">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h1 className="text-4xl text-festival-purple font-heading mb-6">
-            {t('cookiesTitle')}
-          </h1>
+          <h1 className="page-title mb-6">{t('cookiesTitle')}</h1>
           <p className="text-xl text-festival-purple/80 mb-8">
             {t('cookiesIntro')}
           </p>

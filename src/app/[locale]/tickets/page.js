@@ -40,14 +40,11 @@ function TicketsContent() {
 
   return (
     <main className="min-h-screen pt-24 pb-16">
-      <section className="py-16 bg-festival-cream">
+      <section className="py-20 bg-festival-cream">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl text-festival-purple mb-4 font-heading">
-            {t('title')}
-          </h1>
-          <p className="text-xl text-festival-purple/80 max-w-2xl mx-auto mb-16">
-            {t('subtitle')}
-          </p>
+          <h1 className="page-title">{t('title')}</h1>
+          <p className="page-subtitle">{t('subtitle')}</p>
+          <div className="page-subtitle-line" />
 
           {canceled && (
             <p className="mb-8 mx-auto max-w-xl px-4 py-3 rounded-xl bg-festival-purple/10 text-festival-purple border border-festival-purple/20">

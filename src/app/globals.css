@@ -39,6 +39,47 @@
   h4 {
     font-family: var(--font-heading);
   }
+
+  .container {
+    max-width: 80rem; /* max-w-7xl */
+  }
+}
+
+@layer components {
+  .page-title {
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    color: var(--color-festival-purple);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  @media (min-width: 768px) {
+    .page-title {
+      font-size: 3rem;
+      line-height: 1;
+    }
+  }
+  .page-subtitle {
+    font-size: 1.25rem;
+    color: color-mix(in srgb, var(--color-festival-purple) 80%, transparent);
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .page-subtitle-line {
+    width: 3rem;
+    height: 0.25rem;
+    background: color-mix(
+      in srgb,
+      var(--color-festival-purple) 30%,
+      transparent
+    );
+    margin: 0 auto 3rem;
+    border-radius: 9999px;
+  }
 }
 
 @keyframes logo-pop {

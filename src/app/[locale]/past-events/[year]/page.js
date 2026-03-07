@@ -46,7 +46,7 @@ export default async function PastEventYearPage({ params }) {
 
   return (
     <main className="min-h-screen pt-24 pb-16">
-      <section className="py-16 bg-festival-cream">
+      <section className="py-20 bg-festival-cream">
         <div className="container mx-auto px-4 max-w-4xl">
           <p className="mb-6">
             <Link
@@ -57,12 +57,9 @@ export default async function PastEventYearPage({ params }) {
             </Link>
           </p>
 
-          <h1 className="text-4xl md:text-5xl text-festival-purple text-center mb-2 font-heading">
-            QM Fest {edition.year}
-          </h1>
-          <p className="text-xl text-festival-purple/80 text-center mb-12">
-            {t(edition.dateKey)}
-          </p>
+          <h1 className="page-title">QM Fest {edition.year}</h1>
+          <p className="page-subtitle">{t(edition.dateKey)}</p>
+          <div className="page-subtitle-line" />
 
           <p className="text-festival-purple/80 text-lg text-center max-w-2xl mx-auto mb-14">
             {t(`description${edition.year}`)}

@@ -43,14 +43,11 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen pt-24 pb-16">
-      <section className="py-16 bg-festival-cream">
+      <section className="py-20 bg-festival-cream">
         <div className="container mx-auto px-4 max-w-2xl">
-          <h1 className="text-4xl md:text-5xl text-festival-purple text-center mb-4 font-heading">
-            {t('title')}
-          </h1>
-          <p className="text-xl text-festival-purple/80 text-center mb-12">
-            {t('subtitle')}
-          </p>
+          <h1 className="page-title">{t('title')}</h1>
+          <p className="page-subtitle">{t('subtitle')}</p>
+          <div className="page-subtitle-line" />
 
           {sent ? (
             <p className="text-center text-festival-purple text-lg py-8">

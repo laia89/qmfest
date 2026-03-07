@@ -19,7 +19,7 @@ export default function Home() {
           }}
         />
         <div className="container mx-auto px-4 relative z-20 text-center">
-          <h1 className="text-festival-yellow text-6xl md:text-8xl mb-4 animate-fade-in">
+          <h1 className="text-festival-yellow text-5xl md:text-7xl mb-4 animate-fade-in">
             Queer Music Fest
           </h1>
           <p className="text-2xl md:text-4xl mb-6 animate-fade-in-delay-1">
@@ -51,7 +51,7 @@ export default function Home() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white/50 p-8 rounded-xl backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+            <div className="bg-white/50 p-8 rounded-xl backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:scale-[1.02] overflow-hidden">
               <h3 className="text-2xl text-festival-purple mb-4">
                 {t('about.values.diversity')}
               </h3>
@@ -59,7 +59,7 @@ export default function Home() {
                 {t('about.values.diversityDesc')}
               </p>
             </div>
-            <div className="bg-white/50 p-8 rounded-xl backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+            <div className="bg-white/50 p-8 rounded-xl backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:scale-[1.02] overflow-hidden">
               <h3 className="text-2xl text-festival-purple mb-4">
                 {t('about.values.inclusion')}
               </h3>
@@ -67,7 +67,7 @@ export default function Home() {
                 {t('about.values.inclusionDesc')}
               </p>
             </div>
-            <div className="bg-white/50 p-8 rounded-xl backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+            <div className="bg-white/50 p-8 rounded-xl backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:scale-[1.02] overflow-hidden">
               <h3 className="text-2xl text-festival-purple mb-4">
                 {t('about.values.art')}
               </h3>
@@ -129,13 +129,13 @@ export default function Home() {
       </section>
 
       {/* Tickets */}
-      <section className="py-20 bg-gradient-to-b from-festival-yellow to-festival-purple text-festival-cream">
+      <section className="py-20 bg-gradient-to-b from-festival-yellow/95 via-festival-purple/90 to-festival-purple text-festival-cream">
         <ScrollReveal className="container mx-auto px-4" delay={0.1}>
           <h2 className="text-4xl text-center mb-4">{t('tickets.title')}</h2>
           <p className="text-xl text-center mb-16">{t('tickets.subtitle')}</p>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl transition-all duration-300 hover:bg-white/20 hover:scale-[1.02] hover:shadow-xl">
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl transition-all duration-300 hover:bg-white/20 hover:scale-[1.02] hover:shadow-xl overflow-hidden">
               <h3 className="text-2xl mb-4">{t('tickets.earlyBird')}</h3>
               <p className="text-4xl mb-8">{t('tickets.earlyBirdPrice')}</p>
               <Link
@@ -145,7 +145,7 @@ export default function Home() {
                 {t('tickets.cta')}
               </Link>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl transition-all duration-300 hover:bg-white/20 hover:scale-[1.02] hover:shadow-xl">
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl transition-all duration-300 hover:bg-white/20 hover:scale-[1.02] hover:shadow-xl overflow-hidden">
               <h3 className="text-2xl mb-4">{t('tickets.regular')}</h3>
               <p className="text-4xl mb-8">{t('tickets.regularPrice')}</p>
               <Link
@@ -155,7 +155,7 @@ export default function Home() {
                 {t('tickets.cta')}
               </Link>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl transition-all duration-300 hover:bg-white/20 hover:scale-[1.02] hover:shadow-xl">
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl transition-all duration-300 hover:bg-white/20 hover:scale-[1.02] hover:shadow-xl overflow-hidden">
               <h3 className="text-2xl mb-4">{t('tickets.vip')}</h3>
               <p className="text-4xl mb-8">{t('tickets.vipPrice')}</p>
               <Link
