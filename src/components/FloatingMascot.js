@@ -44,7 +44,7 @@ function BalloonPlaceholder({ className, gradientId }) {
 }
 
 const SMOOTHING = 0.08
-const SIZE = 80
+const SIZE = 112
 
 export default function FloatingMascot({
   mascotSrc = null,
@@ -92,7 +92,9 @@ export default function FloatingMascot({
       const rect = el.getBoundingClientRect()
       const x = e.clientX - rect.left
       const y = e.clientY - rect.top
-      targetRef.current = { x, y }
+      // Desplaçament cap amunt: el cursor seria el “fil”, el globus penja a sota
+      // Cursor a la dreta del globus (com agafar el fil): globus amunt i a l'esquerra
+      targetRef.current = { x: x - 28, y: y - 42 }
       if (!visible) {
         setPos({ x, y })
         setVisible(true)
@@ -118,12 +120,12 @@ export default function FloatingMascot({
 
   return (
     <div
-      className="absolute inset-0 overflow-hidden pointer-events-none z-10"
+      className="absolute inset-0 overflow-hidden pointer-events-none z-10 hidden md:block"
       aria-hidden
     >
       {visible && (
         <div
-          className="absolute w-16 h-20 md:w-20 md:h-24 transition-opacity duration-300"
+          className="absolute w-28 h-[8.5rem] transition-opacity duration-300"
           style={{
             left: pos.x,
             top: pos.y,
