@@ -1,6 +1,7 @@
 'use client'
 
 import ScrollReveal from '@/components/ScrollReveal'
+import WavyDivider from '@/components/WavyDivider'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 
@@ -40,8 +41,84 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
+      <WavyDivider className="bg-festival-cream" />
+
+      {/* Tickets — CTA compra just després del hero */}
       <section className="py-20 bg-festival-cream">
+        <ScrollReveal className="container mx-auto px-4" delay={0.1}>
+          <h2 className="text-4xl text-festival-purple text-center mb-4">
+            {t('tickets.title')}
+          </h2>
+          <p className="text-xl text-festival-purple/80 text-center mb-16">
+            {t('tickets.subtitle')}
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="bg-white/80 p-8 rounded-xl shadow-lg border-2 border-festival-yellow/30 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] overflow-hidden">
+              <h3 className="text-2xl text-festival-purple mb-4">
+                {t('tickets.earlyBird')}
+              </h3>
+              <p className="text-4xl text-festival-purple mb-8">
+                {t('tickets.earlyBirdPrice')}
+              </p>
+              <Link
+                href={`/${t('locale')}/tickets`}
+                className="block w-full bg-festival-yellow text-festival-purple hover:bg-festival-yellow/90 font-bold py-3 px-8 rounded-full text-center transition-colors cursor-pointer"
+              >
+                {t('tickets.cta')}
+              </Link>
+            </div>
+            <div className="bg-white/80 p-8 rounded-xl shadow-lg border-2 border-festival-purple/30 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] overflow-hidden">
+              <h3 className="text-2xl text-festival-purple mb-4">
+                {t('tickets.regular')}
+              </h3>
+              <p className="text-4xl text-festival-purple mb-8">
+                {t('tickets.regularPrice')}
+              </p>
+              <Link
+                href={`/${t('locale')}/tickets`}
+                className="block w-full bg-festival-purple text-festival-cream hover:bg-festival-purple/90 font-bold py-3 px-8 rounded-full text-center transition-colors cursor-pointer"
+              >
+                {t('tickets.cta')}
+              </Link>
+            </div>
+            <div className="bg-white/80 p-8 rounded-xl shadow-lg border-2 border-festival-yellow/50 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] overflow-hidden">
+              <h3 className="text-2xl text-festival-purple mb-4">
+                {t('tickets.vip')}
+              </h3>
+              <p className="text-4xl text-festival-purple mb-8">
+                {t('tickets.vipPrice')}
+              </p>
+              <Link
+                href={`/${t('locale')}/tickets`}
+                className="block w-full bg-festival-yellow text-festival-purple hover:bg-festival-yellow/90 font-bold py-3 px-8 rounded-full text-center transition-colors cursor-pointer"
+              >
+                {t('tickets.cta')}
+              </Link>
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* Line-up Preview — qui toca */}
+      <section className="py-20 bg-gradient-to-b from-festival-purple to-festival-yellow text-festival-cream">
+        <ScrollReveal
+          className="container mx-auto px-4 text-center"
+          delay={0.1}
+        >
+          <h2 className="text-4xl mb-4">{t('lineup.title')}</h2>
+          <p className="text-xl mb-12">{t('lineup.subtitle')}</p>
+          <Link
+            href={`/${t('locale')}/lineup`}
+            className="inline-block bg-festival-cream text-festival-purple hover:bg-festival-cream/90 font-bold py-3 px-8 rounded-full transition-colors"
+          >
+            {t('lineup.cta')}
+          </Link>
+        </ScrollReveal>
+      </section>
+
+      {/* About — context i valors */}
+      <section className="py-20 bg-gradient-to-b from-festival-cream to-festival-purple/10">
         <ScrollReveal className="container mx-auto px-4">
           <h2 className="text-4xl text-festival-purple text-center mb-16">
             {t('about.title')}
@@ -79,24 +156,7 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      {/* Line-up Preview */}
-      <section className="py-20 bg-gradient-to-b from-festival-purple to-festival-yellow text-festival-cream">
-        <ScrollReveal
-          className="container mx-auto px-4 text-center"
-          delay={0.1}
-        >
-          <h2 className="text-4xl mb-4">{t('lineup.title')}</h2>
-          <p className="text-xl mb-12">{t('lineup.subtitle')}</p>
-          <Link
-            href={`/${t('locale')}/lineup`}
-            className="inline-block bg-festival-cream text-festival-purple hover:bg-festival-cream/90 font-bold py-3 px-8 rounded-full transition-colors"
-          >
-            {t('lineup.cta')}
-          </Link>
-        </ScrollReveal>
-      </section>
-
-      {/* Location */}
+      {/* Location — on i com arribar */}
       <section className="py-20 bg-festival-cream">
         <ScrollReveal
           className="container mx-auto px-4 text-center"
@@ -125,47 +185,6 @@ export default function Home() {
           >
             {t('location.mapCta')}
           </a>
-        </ScrollReveal>
-      </section>
-
-      {/* Tickets */}
-      <section className="py-20 bg-gradient-to-b from-festival-yellow/95 via-festival-purple/90 to-festival-purple text-festival-cream">
-        <ScrollReveal className="container mx-auto px-4" delay={0.1}>
-          <h2 className="text-4xl text-center mb-4">{t('tickets.title')}</h2>
-          <p className="text-xl text-center mb-16">{t('tickets.subtitle')}</p>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl transition-all duration-300 hover:bg-white/20 hover:scale-[1.02] hover:shadow-xl overflow-hidden">
-              <h3 className="text-2xl mb-4">{t('tickets.earlyBird')}</h3>
-              <p className="text-4xl mb-8">{t('tickets.earlyBirdPrice')}</p>
-              <Link
-                href={`/${t('locale')}/tickets`}
-                className="block w-full bg-festival-cream text-festival-purple hover:bg-festival-cream/90 font-bold py-3 px-8 rounded-full text-center transition-colors cursor-pointer"
-              >
-                {t('tickets.cta')}
-              </Link>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl transition-all duration-300 hover:bg-white/20 hover:scale-[1.02] hover:shadow-xl overflow-hidden">
-              <h3 className="text-2xl mb-4">{t('tickets.regular')}</h3>
-              <p className="text-4xl mb-8">{t('tickets.regularPrice')}</p>
-              <Link
-                href={`/${t('locale')}/tickets`}
-                className="block w-full bg-festival-cream text-festival-purple hover:bg-festival-cream/90 font-bold py-3 px-8 rounded-full text-center transition-colors cursor-pointer"
-              >
-                {t('tickets.cta')}
-              </Link>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl transition-all duration-300 hover:bg-white/20 hover:scale-[1.02] hover:shadow-xl overflow-hidden">
-              <h3 className="text-2xl mb-4">{t('tickets.vip')}</h3>
-              <p className="text-4xl mb-8">{t('tickets.vipPrice')}</p>
-              <Link
-                href={`/${t('locale')}/tickets`}
-                className="block w-full bg-festival-cream text-festival-purple hover:bg-festival-cream/90 font-bold py-3 px-8 rounded-full text-center transition-colors cursor-pointer"
-              >
-                {t('tickets.cta')}
-              </Link>
-            </div>
-          </div>
         </ScrollReveal>
       </section>
     </main>

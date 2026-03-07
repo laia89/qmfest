@@ -9,9 +9,11 @@
 }
 
 @theme {
+  /* Kit de marca: purple, yellow, white */
   --color-festival-purple: #7758d4;
   --color-festival-yellow: #ffc534;
   --color-festival-cream: #fbf2e9;
+  --color-festival-white: #ffffff;
 
   --font-heading: 'TAN Nimbus', serif;
   --font-body: var(--font-montserrat), 'Montserrat', ui-sans-serif, sans-serif;

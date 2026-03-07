@@ -1,5 +1,15 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Kit de marca
+
+La web segueix el **Kit de marca QM Fest**:
+
+- **Colors:** porpra `#7758d4`, groc `#ffc534`, blanc `#ffffff` (i cream `#fbf2e9` per fons suaus).
+- **Tipografia:** TAN Nimbus (títols), Montserrat (subtítols i cos).
+- **Recursos gràfics:** línies ondulades porpra/groc a la home (component `WavyDivider`).
+
+Per usar la **mascota (gos de globus amb "Q.M.Fe")** al lloc: exporta el logo "sin fondo" del kit en PNG o SVG, desa’l a `public/` (p. ex. `logo-mascota.png`) i es pot afegir al header, footer o favicon substituint la icona actual.
+
 ## Getting Started
 
 First, run the development server:
