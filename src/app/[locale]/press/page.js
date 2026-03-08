@@ -1,5 +1,6 @@
 'use client'
 
+import { CONTACT_EMAIL } from '@/lib/contact'
 import { useTranslations } from 'next-intl'
 
 export default function PressPage() {
@@ -28,10 +29,10 @@ export default function PressPage() {
                 {t('contactTitle')}
               </h2>
               <a
-                href={`mailto:${t('contactEmail')}?subject=Press%20QM%20Fest`}
+                href={`mailto:${CONTACT_EMAIL}?subject=Press%20QM%20Fest`}
                 className="text-festival-purple font-semibold hover:underline"
               >
-                {t('contactEmail')}
+                {CONTACT_EMAIL}
               </a>
             </div>
             <div>

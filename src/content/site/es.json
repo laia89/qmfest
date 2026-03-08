@@ -55,7 +55,6 @@
     "kitTitle": "Kit de prensa",
     "kitDesc": "Logos, imágenes e información clave del festival. Descarga el pack o contáctanos para material en alta resolución.",
     "contactTitle": "Contacto de prensa",
-    "contactEmail": "hola@qmfest.com",
     "logosTitle": "Logos",
     "logosDesc": "Logos y recursos de marca disponibles bajo demanda. Contáctanos para archivos en alta resolución."
   },
@@ -128,7 +127,7 @@
     "formMessage": "Mensaje",
     "formSend": "Enviar",
     "formSuccess": "¡Gracias! Te responderemos pronto.",
-    "email": "hola@qmfest.com",
+    "email": "hello@queermusicfest.com",
     "socialTitle": "Encuéntranos"
   },
   "program": {

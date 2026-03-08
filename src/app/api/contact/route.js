@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-const toEmail = process.env.CONTACT_TO_EMAIL || 'hola@qmfest.com'
-const fromEmail = process.env.RESEND_FROM || 'QM Fest <onboarding@resend.dev>'
+const contactEmail =
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@queermusicfest.com'
+const fromEmail = `QM Fest <${contactEmail}>`
 
 export async function POST(request) {
   try {
@@ -29,7 +30,7 @@ export async function POST(request) {
     const resend = new Resend(apiKey)
     const { data, error } = await resend.emails.send({
       from: fromEmail,
-      to: [toEmail],
+      to: [contactEmail],
       replyTo: email.trim(),
       subject: `[QM Fest] Contact from ${name.trim()}`,
       text: `Name: ${name.trim()}\nEmail: ${email.trim()}\n\nMessage:\n${message.trim()}`,

@@ -1,5 +1,6 @@
 'use client'
 
+import { CONTACT_EMAIL } from '@/lib/contact'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 
@@ -48,7 +49,7 @@ export default function VolunteersPage() {
       const body = encodeURIComponent(
         `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
       )
-      window.location.href = `mailto:hola@qmfest.com?subject=${subject}&body=${body}`
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
       setSent(true)
     } finally {
       setSending(false)

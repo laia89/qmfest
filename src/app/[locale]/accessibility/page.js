@@ -1,5 +1,6 @@
 'use client'
 
+import { CONTACT_EMAIL } from '@/lib/contact'
 import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
 
@@ -51,10 +52,10 @@ export default function AccessibilityPage() {
             </Link>{' '}
             {t('contactOrEmail')}{' '}
             <a
-              href="mailto:hola@qmfest.com?subject=Accessibility%20QM%20Fest"
+              href={`mailto:${CONTACT_EMAIL}?subject=Accessibility%20QM%20Fest`}
               className="text-festival-purple font-semibold hover:underline"
             >
-              hola@qmfest.com
+              {CONTACT_EMAIL}
             </a>
           </p>
         </div>

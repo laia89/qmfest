@@ -55,7 +55,6 @@
     "kitTitle": "Press kit",
     "kitDesc": "Logos, images and key information about the festival. Download the pack or contact us for high-resolution material.",
     "contactTitle": "Press contact",
-    "contactEmail": "hola@qmfest.com",
     "logosTitle": "Logos",
     "logosDesc": "Logo and brand assets available on request. Contact us for high-resolution files."
   },
@@ -128,7 +127,6 @@
     "formMessage": "Message",
     "formSend": "Send",
     "formSuccess": "Thank you! We'll get back to you soon.",
-    "email": "hola@qmfest.com",
     "socialTitle": "Find us"
   },
   "program": {

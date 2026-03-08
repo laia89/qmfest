@@ -1,5 +1,6 @@
 'use client'
 
+import { CONTACT_EMAIL } from '@/lib/contact'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 
@@ -113,10 +114,10 @@ export default function ContactPage() {
           <div className="mt-12 pt-8 border-t border-festival-purple/20 text-center">
             <p className="text-festival-purple/80 mb-2">{t('socialTitle')}</p>
             <a
-              href={`mailto:${t('email')}`}
+              href={`mailto:${CONTACT_EMAIL}`}
               className="text-festival-purple font-semibold hover:underline"
             >
-              {t('email')}
+              {CONTACT_EMAIL}
             </a>
           </div>
         </div>
