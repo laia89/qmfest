@@ -8,7 +8,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import '../globals.css'
 
-const locales = ['ca', 'es', 'en']
+const locales = ['es', 'ca', 'en']
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))

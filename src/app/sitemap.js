@@ -1,7 +1,7 @@
 import pastEditions from '@/content/past-events.json'
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://qmfest.com'
-const locales = ['ca', 'es', 'en']
+const locales = ['es', 'ca', 'en']
 const paths = [
   '',
   '/lineup',
