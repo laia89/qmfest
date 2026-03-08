@@ -70,9 +70,11 @@
   },
   "playlist": {
     "title": "Playlist",
+    "heading": "QM FEST PLAYLIST OFICIAL",
+    "dates": "QM Fest",
     "subtitle": "La música del QM Fest",
     "description": "Escolta a Spotify la playlist oficial del festival. Artistes del line-up i més.",
-    "cta": "Obrir a Spotify"
+    "cta": "Escolta a Spotify"
   },
   "volunteers": {
     "title": "Voluntariat",

@@ -1,51 +1,46 @@
-import Link from 'next/link'
+'use client'
 
-const locales = [
-  { code: 'ca', label: 'Inici' },
-  { code: 'es', label: 'Inicio' },
-  { code: 'en', label: 'Home' },
-]
+import Image from 'next/image'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+
+const locales = ['es', 'ca', 'en']
+const defaultLocale = 'es'
+
+const messages = {
+  es: { notFound: 'Esta página no existe.', backToHome: 'Volver al inicio' },
+  ca: {
+    notFound: 'Aquesta pàgina no existeix.',
+    backToHome: "Tornar a l'inici",
+  },
+  en: { notFound: "This page doesn't exist.", backToHome: 'Back to home' },
+}
 
 export default function NotFound() {
+  const pathname = usePathname() ?? ''
+  const segment = pathname.split('/').filter(Boolean)[0]
+  const locale = locales.includes(segment) ? segment : defaultLocale
+  const homeHref = `/${locale}`
+  const t = messages[locale] ?? messages[defaultLocale]
+
   return (
-    <div className="min-h-screen bg-festival-cream flex flex-col">
-      <header className="bg-festival-purple py-4">
-        <div className="container mx-auto px-4">
-          <Link
-            href="/es"
-            className="text-festival-yellow text-xl font-bold font-heading"
-          >
-            QM Fest
-          </Link>
-        </div>
-      </header>
-      <main className="flex-1 flex items-center justify-center px-4">
-        <div className="text-center max-w-md">
-          <h1 className="text-6xl font-heading text-festival-purple mb-4">
-            404
-          </h1>
-          <p className="text-xl text-festival-purple/80 mb-8">
-            This page could not be found.
-          </p>
-          <p className="text-festival-purple/70 text-sm mb-6">
-            Go to home in your language:
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {locales.map(({ code, label }) => (
-              <Link
-                key={code}
-                href={`/${code}`}
-                className="inline-block bg-festival-purple text-festival-cream hover:bg-festival-purple/90 font-semibold py-2.5 px-6 rounded-full transition-colors text-sm"
-              >
-                {label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </main>
-      <footer className="bg-festival-purple text-festival-cream py-6 text-center text-sm">
-        © {new Date().getFullYear()} QM Fest
-      </footer>
+    <div className="min-h-screen bg-festival-cream flex flex-col items-center justify-center px-4 py-12">
+      <p className="text-festival-purple/70 text-lg mb-10">{t.notFound}</p>
+      <Link
+        href={homeHref}
+        className="inline-flex items-center gap-3 text-festival-purple font-heading font-bold hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-festival-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-festival-cream rounded"
+      >
+        <Image
+          src="/images/logo-mascota-no-fil.png"
+          alt=""
+          width={80}
+          height={80}
+          className="h-20 w-auto object-contain -mt-4"
+          unoptimized
+        />
+        <span className="text-2xl">QM Fest</span>
+      </Link>
+      <p className="mt-6 text-festival-purple/60 text-sm">{t.backToHome}</p>
     </div>
   )
 }

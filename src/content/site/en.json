@@ -70,9 +70,11 @@
   },
   "playlist": {
     "title": "Playlist",
+    "heading": "QM FEST OFFICIAL PLAYLIST",
+    "dates": "QM Fest",
     "subtitle": "QM Fest music",
     "description": "Listen to the official festival playlist on Spotify. Line-up artists and more.",
-    "cta": "Open in Spotify"
+    "cta": "Listen on Spotify"
   },
   "volunteers": {
     "title": "Volunteers",
