@@ -42,11 +42,14 @@
     "title": "Tickets",
     "subtitle": "Don't miss this unique experience",
     "earlyBird": "Early Bird",
-    "earlyBirdPrice": "25€",
+    "earlyBirdPrice": "21.40€",
+    "earlyBirdDesc": "Limited availability",
     "regular": "Regular",
-    "regularPrice": "35€",
+    "regularPrice": "26€",
+    "regularDesc": "Standard entry",
     "vip": "VIP",
-    "vipPrice": "75€",
+    "vipPrice": "30€",
+    "vipDesc": "Backstage + perks",
     "cta": "Buy now"
   }
 }

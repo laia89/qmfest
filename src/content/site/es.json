@@ -6,7 +6,7 @@
     "tickets": "Entradas",
     "merch": "Merch",
     "playlist": "Playlist",
-    "program": "Programa",
+    "program": "Horarios",
     "about": "Sobre Nosotras",
     "pastEvents": "Ediciones anteriores",
     "accessibility": "Accesibilidad",
@@ -150,13 +150,10 @@
     "socialTitle": "Encuéntranos"
   },
   "program": {
-    "title": "Programa",
-    "subtitle": "Horarios y escenarios",
-    "day": "Día",
+    "title": "Horarios",
+    "dateVenue": "25 de mayo 2026 · Sala Apolo, Barcelona",
     "time": "Hora",
-    "stage": "Escenario",
-    "artist": "Artista",
-    "allStages": "Todos los escenarios"
+    "artist": "Artista"
   },
   "about": {
     "title": "Sobre el Festival",
@@ -221,11 +218,14 @@
     "title": "Entradas",
     "subtitle": "No te pierdas esta experiencia única",
     "earlyBird": "Early Bird",
-    "earlyBirdPrice": "25€",
+    "earlyBirdPrice": "21,40€",
+    "earlyBirdDesc": "Disponibilidad limitada",
     "regular": "Regular",
-    "regularPrice": "35€",
+    "regularPrice": "26€",
+    "regularDesc": "Entrada estándar",
     "vip": "VIP",
-    "vipPrice": "75€",
+    "vipPrice": "30€",
+    "vipDesc": "Backstage y ventajas",
     "cta": "Comprar ahora",
     "canceledMessage": "Has cancelado la compra. Puedes intentarlo de nuevo cuando quieras."
   }

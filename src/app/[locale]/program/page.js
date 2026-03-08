@@ -11,17 +11,13 @@ export default async function ProgramPage({ params }) {
     <main className="min-h-screen pt-24 pb-16">
       <section className="py-20 bg-festival-cream">
         <div className="container mx-auto px-4">
-          <h1 className="page-title">{t('title')}</h1>
-          <p className="page-subtitle">{t('subtitle')}</p>
-          <div className="page-subtitle-line" />
+          <h1 className="page-title mb-16">{t('title')}</h1>
 
           <ProgramSchedule
             schedule={scheduleData}
             timeLabel={t('time')}
-            stageLabel={t('stage')}
             artistLabel={t('artist')}
-            allStagesLabel={t('allStages')}
-            dayLabel={t('day')}
+            dateVenue={t('dateVenue')}
           />
         </div>
       </section>

@@ -42,11 +42,14 @@
     "title": "Entrades",
     "subtitle": "No et perdis aquesta experiència única",
     "earlyBird": "Early Bird",
-    "earlyBirdPrice": "25€",
+    "earlyBirdPrice": "21,40€",
+    "earlyBirdDesc": "Disponibilitat limitada",
     "regular": "Regular",
-    "regularPrice": "35€",
+    "regularPrice": "26€",
+    "regularDesc": "Entrada estàndard",
     "vip": "VIP",
-    "vipPrice": "75€",
+    "vipPrice": "30€",
+    "vipDesc": "Backstage i avantatges",
     "cta": "Compra ara"
   }
 }

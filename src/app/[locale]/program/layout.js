@@ -2,11 +2,11 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://qmfest.vercel.app'
 
 export async function generateMetadata({ params }) {
   const { locale } = await Promise.resolve(params)
-  const titles = { en: 'Programme', es: 'Programa', ca: 'Programa' }
+  const titles = { en: 'Schedule', es: 'Horarios', ca: 'Horaris' }
   const path = 'program'
   return {
     title: titles[locale] || titles.en,
-    description: 'Schedule and stages. QM Fest Barcelona.',
+    description: 'Festival timetable. QM Fest Barcelona.',
     openGraph: {
       title: `${titles[locale] || titles.en} | QM Fest`,
     },

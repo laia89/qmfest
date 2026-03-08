@@ -6,7 +6,7 @@
     "tickets": "Tickets",
     "merch": "Merch",
     "playlist": "Playlist",
-    "program": "Programme",
+    "program": "Schedule",
     "about": "About",
     "pastEvents": "Past events",
     "accessibility": "Accessibility",
@@ -149,13 +149,10 @@
     "socialTitle": "Find us"
   },
   "program": {
-    "title": "Programme",
-    "subtitle": "Schedule and stages",
-    "day": "Day",
+    "title": "Schedule",
+    "dateVenue": "25 May 2026 · Sala Apolo, Barcelona",
     "time": "Time",
-    "stage": "Stage",
-    "artist": "Artist",
-    "allStages": "All stages"
+    "artist": "Artist"
   },
   "location": {
     "title": "Location",
@@ -220,11 +217,14 @@
     "title": "Tickets",
     "subtitle": "Don't miss this unique experience",
     "earlyBird": "Early Bird",
-    "earlyBirdPrice": "25€",
+    "earlyBirdPrice": "21.40€",
+    "earlyBirdDesc": "Limited availability",
     "regular": "Regular",
-    "regularPrice": "35€",
+    "regularPrice": "26€",
+    "regularDesc": "Standard entry",
     "vip": "VIP",
-    "vipPrice": "75€",
+    "vipPrice": "30€",
+    "vipDesc": "Backstage + perks",
     "cta": "Buy now",
     "canceledMessage": "You canceled the purchase. You can try again whenever you like."
   }

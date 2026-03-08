@@ -61,7 +61,7 @@ function TicketsContent() {
                 {t('earlyBirdPrice')}
               </p>
               <p className="text-festival-purple/70 text-sm mb-6">
-                Limited availability
+                {t('earlyBirdDesc')}
               </p>
               {PRICE_IDS.earlyBird ? (
                 <button
@@ -86,7 +86,7 @@ function TicketsContent() {
                 {t('regularPrice')}
               </p>
               <p className="text-festival-purple/70 text-sm mb-6">
-                Standard entry
+                {t('regularDesc')}
               </p>
               {PRICE_IDS.regular ? (
                 <button
@@ -111,7 +111,7 @@ function TicketsContent() {
                 {t('vipPrice')}
               </p>
               <p className="text-festival-purple/70 text-sm mb-6">
-                Backstage + perks
+                {t('vipDesc')}
               </p>
               {PRICE_IDS.vip ? (
                 <button
