@@ -6,6 +6,8 @@ const paths = [
   '',
   '/lineup',
   '/tickets',
+  '/merch',
+  '/playlist',
   '/program',
   '/about',
   '/past-events',

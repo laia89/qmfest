@@ -7,8 +7,8 @@ import { usePathname } from 'next/navigation'
 import { useCallback, useEffect, useState } from 'react'
 
 const navLinks = [
-  { href: '', key: 'home' },
   { href: '/tickets', key: 'tickets' },
+  { href: '/merch', key: 'merch' },
   { href: '/lineup', key: 'lineup' },
   { href: '/program', key: 'program' },
   { href: '/about', key: 'about' },

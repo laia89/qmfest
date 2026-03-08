@@ -4,6 +4,8 @@
     "home": "Home",
     "lineup": "Lineup",
     "tickets": "Tickets",
+    "merch": "Merch",
+    "playlist": "Playlist",
     "program": "Programme",
     "about": "About",
     "pastEvents": "Past events",
@@ -58,6 +60,20 @@
     "logosTitle": "Logos",
     "logosDesc": "Logo and brand assets available on request. Contact us for high-resolution files."
   },
+  "merch": {
+    "title": "Merch",
+    "subtitle": "Festival merchandise",
+    "description": "Order official QM Fest merch online. T-shirts, accessories and more to take the festival home.",
+    "cta": "View shop / Order",
+    "comingSoonBefore": "You'll soon be able to order merch here. In the meantime, email us at ",
+    "comingSoonAfter": " for orders."
+  },
+  "playlist": {
+    "title": "Playlist",
+    "subtitle": "QM Fest music",
+    "description": "Listen to the official festival playlist on Spotify. Line-up artists and more.",
+    "cta": "Open in Spotify"
+  },
   "volunteers": {
     "title": "Volunteers",
     "subtitle": "Join the team and be part of QM Fest.",
@@ -91,7 +107,8 @@
     "moreTitle": "More",
     "privacy": "Privacy",
     "cookies": "Cookies",
-    "contact": "Contact"
+    "contact": "Contact",
+    "contactLink": "Get in touch"
   },
   "faq": {
     "title": "FAQ",

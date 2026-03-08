@@ -5,9 +5,20 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
-const footerNavLinks = [
+const footerLinksCol1 = [
+  { href: '/tickets', key: 'tickets' },
+  { href: '/merch', key: 'merch' },
+  { href: '/lineup', key: 'lineup' },
+  { href: '/playlist', key: 'playlist' },
+  { href: '/program', key: 'program' },
+]
+const footerLinksCol2 = [
+  { href: '/about', key: 'about' },
+  { href: '/faq', key: 'faq' },
   { href: '/past-events', key: 'pastEvents' },
   { href: '/accessibility', key: 'accessibility' },
+]
+const footerLinksContact = [
   { href: '/sponsors', key: 'sponsors' },
   { href: '/press', key: 'press' },
   { href: '/volunteers', key: 'volunteers' },
@@ -55,55 +66,30 @@ export default function Footer() {
   return (
     <footer className="bg-festival-purple text-festival-cream pt-16 pb-8">
       <div className="container mx-auto px-4">
-        <Link
-          href={`/${locale}`}
-          className="inline-flex items-center gap-1 text-festival-yellow font-heading font-bold text-xl mb-10 hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-festival-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-festival-purple rounded"
-        >
-          <Image
-            src="/images/logo-mascota-no-fil.png"
-            alt=""
-            width={80}
-            height={80}
-            className="h-20 w-auto object-contain shrink-0 -mt-5"
-            unoptimized
-          />
-          <span>QM Fest</span>
-        </Link>
-        <div className="flex flex-col md:flex-row md:flex-wrap md:items-end gap-10 mb-16">
-          <div className="md:min-w-[280px]">
-            <h3 className="text-xl font-heading font-bold text-festival-yellow mb-4">
-              {t('newsletterTitle')}
-            </h3>
-            {subscribed ? (
-              <p className="text-festival-cream/90">{t('newsletterSuccess')}</p>
-            ) : (
-              <form
-                onSubmit={handleNewsletter}
-                className="flex gap-2 flex-wrap"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[0.7fr_0.7fr_1fr_1.6fr] gap-8 lg:gap-6 mb-8">
+          {/* Columna 1: Logo + enllaços */}
+          <div>
+            <div className="min-h-[2.5rem] flex items-end mb-4">
+              <Link
+                href={`/${locale}`}
+                className="inline-flex items-center gap-1.5 text-festival-yellow font-heading font-bold text-xl leading-tight hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-festival-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-festival-purple rounded"
               >
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder={t('newsletterPlaceholder')}
-                  className="flex-1 min-w-[200px] px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-festival-cream placeholder:text-festival-cream/60 focus:outline-none focus:ring-2 focus:ring-festival-yellow"
-                  aria-label={t('newsletterPlaceholder')}
+                <Image
+                  src="/images/logo-mascota-no-fil.png"
+                  alt=""
+                  width={56}
+                  height={56}
+                  className="h-14 w-auto object-contain shrink-0 -mt-5 self-end"
+                  unoptimized
                 />
-                <button
-                  type="submit"
-                  className="px-6 py-2 rounded-full bg-festival-yellow text-festival-purple font-semibold hover:bg-festival-yellow/90 transition-colors cursor-pointer"
-                >
-                  {t('newsletterCta')}
-                </button>
-              </form>
-            )}
-          </div>
-          <div className="flex flex-wrap gap-x-8 gap-y-4 md:flex-1 md:justify-end">
+                <span className="leading-tight">QM Fest</span>
+              </Link>
+            </div>
             <nav
-              aria-label="Secondary"
-              className="flex flex-wrap gap-x-6 gap-y-1 text-sm"
+              aria-label="Footer navigation"
+              className="flex flex-col gap-2 text-sm"
             >
-              {footerNavLinks.map((item) => (
+              {footerLinksCol1.map((item) => (
                 <Link
                   key={item.key}
                   href={`/${locale}${item.href}`}
@@ -113,7 +99,87 @@ export default function Footer() {
                 </Link>
               ))}
             </nav>
-            <div className="flex gap-4">
+          </div>
+
+          {/* Columna 2: enllaços */}
+          <div className="lg:pl-3">
+            <div className="min-h-[2.5rem] mb-4" aria-hidden="true" />
+            <nav
+              aria-label="Footer navigation"
+              className="flex flex-col gap-2 text-sm"
+            >
+              {footerLinksCol2.map((item) => (
+                <Link
+                  key={item.key}
+                  href={`/${locale}${item.href}`}
+                  className={linkClass}
+                >
+                  {tNav(item.key)}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Columna 3: Contacte + Col·laboradors, Premsa, Voluntariat */}
+          <div className="lg:pl-4 lg:border-l border-white/20">
+            <div className="min-h-[2.5rem] flex items-end mb-4">
+              <Link
+                href={`/${locale}/contact`}
+                className="text-xl font-heading font-bold text-festival-yellow leading-tight hover:opacity-90 transition-opacity"
+              >
+                {t('contact')}
+              </Link>
+            </div>
+            <nav
+              aria-label="Footer navigation"
+              className="flex flex-col gap-2 text-sm"
+            >
+              <Link href={`/${locale}/contact`} className={linkClass}>
+                {t('contactLink')}
+              </Link>
+              {footerLinksContact.map((item) => (
+                <Link
+                  key={item.key}
+                  href={`/${locale}${item.href}`}
+                  className={linkClass}
+                >
+                  {tNav(item.key)}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Columna 4: Newsletter + socials */}
+          <div className="lg:pl-4 lg:border-l border-white/20">
+            <div className="min-h-[2.5rem] flex items-end mb-4">
+              <h3 className="text-xl font-heading font-bold text-festival-yellow leading-tight">
+                {t('newsletterTitle')}
+              </h3>
+            </div>
+            {subscribed ? (
+              <p className="text-festival-cream/90">{t('newsletterSuccess')}</p>
+            ) : (
+              <form
+                onSubmit={handleNewsletter}
+                className="flex gap-2 flex-nowrap"
+              >
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder={t('newsletterPlaceholder')}
+                  className="flex-1 min-w-0 px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-festival-cream placeholder:text-festival-cream/60 focus:outline-none focus:ring-2 focus:ring-festival-yellow"
+                  aria-label={t('newsletterPlaceholder')}
+                />
+                <button
+                  type="submit"
+                  className="shrink-0 px-6 py-2 rounded-full bg-festival-yellow text-festival-purple font-semibold hover:bg-festival-yellow/90 transition-colors cursor-pointer"
+                >
+                  {t('newsletterCta')}
+                </button>
+              </form>
+            )}
+            <div className="flex gap-4 mt-6" aria-label={t('socialTitle')}>
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
@@ -137,7 +203,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/20 pt-10 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="border-t border-white/20 pt-4 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-festival-cream/70 text-sm flex items-center gap-2">
             <Image
               src="/images/logo-mascota-no-fil.png"

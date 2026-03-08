@@ -4,6 +4,8 @@
     "home": "Inicio",
     "lineup": "Artistas",
     "tickets": "Entradas",
+    "merch": "Merch",
+    "playlist": "Playlist",
     "program": "Programa",
     "about": "Sobre Nosotras",
     "pastEvents": "Ediciones anteriores",
@@ -58,6 +60,20 @@
     "logosTitle": "Logos",
     "logosDesc": "Logos y recursos de marca disponibles bajo demanda. Contáctanos para archivos en alta resolución."
   },
+  "merch": {
+    "title": "Merch",
+    "subtitle": "La merchandising del festival",
+    "description": "Encarga online la merch oficial del QM Fest. Camisetas, complementos y más para llevar el festival a casa.",
+    "cta": "Ver tienda / Encargar",
+    "comingSoonBefore": "Próximamente podrás encargar la merch desde aquí. Mientras tanto, escríbenos a ",
+    "comingSoonAfter": " para encargos."
+  },
+  "playlist": {
+    "title": "Playlist",
+    "subtitle": "La música del QM Fest",
+    "description": "Escucha en Spotify la playlist oficial del festival. Artistas del line-up y más.",
+    "cta": "Abrir en Spotify"
+  },
   "volunteers": {
     "title": "Voluntariado",
     "subtitle": "Únete al equipo y forma parte del QM Fest.",
@@ -91,7 +107,8 @@
     "moreTitle": "Más",
     "privacy": "Privacidad",
     "cookies": "Cookies",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "contactLink": "Escríbenos"
   },
   "faq": {
     "title": "FAQ",
