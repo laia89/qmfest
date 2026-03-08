@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
     es: `QM Fest ${year}`,
     ca: `QM Fest ${year}`,
   }
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://qmfest.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://qmfest.vercel.app'
   return {
     title: titles[locale] || titles.en,
     description: `Edition ${year} of QM Fest. Barcelona.`,

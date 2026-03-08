@@ -1,6 +1,6 @@
 import pastEditions from '@/content/past-events.json'
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://qmfest.com'
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://qmfest.vercel.app'
 const locales = ['es', 'ca', 'en']
 const paths = [
   '',

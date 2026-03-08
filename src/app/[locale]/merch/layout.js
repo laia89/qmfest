@@ -1,4 +1,4 @@
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://qmfest.com'
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://qmfest.vercel.app'
 
 export async function generateMetadata({ params }) {
   const { locale } = await Promise.resolve(params)

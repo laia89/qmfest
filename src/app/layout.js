@@ -16,7 +16,7 @@ export const metadata = {
     images: [{ url: '/icon', width: 32, height: 32, alt: 'QM Fest' }],
   },
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://qmfest.com',
+    process.env.NEXT_PUBLIC_SITE_URL || 'https://qmfest.vercel.app',
   ),
 }
 
