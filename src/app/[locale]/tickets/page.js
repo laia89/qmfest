@@ -2,7 +2,7 @@
 
 import WavyDivider from '@/components/WavyDivider'
 import { AnimatePresence, motion } from 'framer-motion'
-import { AlertCircle, Info } from 'lucide-react'
+import { AlertCircle, ChevronDown, Info } from 'lucide-react'
 import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
@@ -18,6 +18,10 @@ const PRICE_IDS = {
 
 const MIN_QUANTITY = 1
 const MAX_QUANTITY = 10
+const QUANTITY_OPTIONS = Array.from(
+  { length: MAX_QUANTITY - MIN_QUANTITY + 1 },
+  (_, i) => MIN_QUANTITY + i,
+)
 
 function TicketsContent() {
   const t = useTranslations('tickets')
@@ -147,15 +151,25 @@ function TicketsContent() {
                 >
                   {t('quantity')}
                 </label>
-                <input
-                  id="qty-earlyBird"
-                  type="number"
-                  min={MIN_QUANTITY}
-                  max={MAX_QUANTITY}
-                  value={quantities.earlyBird}
-                  onChange={(e) => setQuantity('earlyBird', e.target.value)}
-                  className="w-14 rounded-lg border-2 border-festival-purple/20 bg-white px-2 py-1.5 text-center text-festival-purple font-semibold focus:border-festival-yellow focus:outline-none focus:ring-2 focus:ring-festival-yellow/30"
-                />
+                <div className="relative">
+                  <select
+                    id="qty-earlyBird"
+                    value={quantities.earlyBird}
+                    onChange={(e) => setQuantity('earlyBird', e.target.value)}
+                    className="min-w-16 rounded-lg border-2 border-festival-purple/20 bg-white pl-3 pr-10 py-2 text-festival-purple font-semibold focus:border-festival-yellow focus:outline-none focus:ring-2 focus:ring-festival-yellow/30 appearance-none"
+                    aria-label={t('quantity')}
+                  >
+                    {QUANTITY_OPTIONS.map((n) => (
+                      <option key={n} value={n}>
+                        {n}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown
+                    className="pointer-events-none absolute right-3 top-1/2 size-5 -translate-y-1/2 text-festival-purple/70"
+                    aria-hidden
+                  />
+                </div>
               </div>
               {PRICE_IDS.earlyBird ? (
                 <button
@@ -189,15 +203,25 @@ function TicketsContent() {
                 >
                   {t('quantity')}
                 </label>
-                <input
-                  id="qty-regular"
-                  type="number"
-                  min={MIN_QUANTITY}
-                  max={MAX_QUANTITY}
-                  value={quantities.regular}
-                  onChange={(e) => setQuantity('regular', e.target.value)}
-                  className="w-14 rounded-lg border-2 border-festival-purple/20 bg-white px-2 py-1.5 text-center text-festival-purple font-semibold focus:border-festival-purple focus:outline-none focus:ring-2 focus:ring-festival-purple/30"
-                />
+                <div className="relative">
+                  <select
+                    id="qty-regular"
+                    value={quantities.regular}
+                    onChange={(e) => setQuantity('regular', e.target.value)}
+                    className="min-w-16 rounded-lg border-2 border-festival-purple/20 bg-white pl-3 pr-10 py-2 text-festival-purple font-semibold focus:border-festival-purple focus:outline-none focus:ring-2 focus:ring-festival-purple/30 appearance-none"
+                    aria-label={t('quantity')}
+                  >
+                    {QUANTITY_OPTIONS.map((n) => (
+                      <option key={n} value={n}>
+                        {n}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown
+                    className="pointer-events-none absolute right-3 top-1/2 size-5 -translate-y-1/2 text-festival-purple/70"
+                    aria-hidden
+                  />
+                </div>
               </div>
               {PRICE_IDS.regular ? (
                 <button
@@ -231,15 +255,25 @@ function TicketsContent() {
                 >
                   {t('quantity')}
                 </label>
-                <input
-                  id="qty-vip"
-                  type="number"
-                  min={MIN_QUANTITY}
-                  max={MAX_QUANTITY}
-                  value={quantities.vip}
-                  onChange={(e) => setQuantity('vip', e.target.value)}
-                  className="w-14 rounded-lg border-2 border-festival-purple/20 bg-white px-2 py-1.5 text-center text-festival-purple font-semibold focus:border-festival-yellow focus:outline-none focus:ring-2 focus:ring-festival-yellow/30"
-                />
+                <div className="relative">
+                  <select
+                    id="qty-vip"
+                    value={quantities.vip}
+                    onChange={(e) => setQuantity('vip', e.target.value)}
+                    className="min-w-16 rounded-lg border-2 border-festival-purple/20 bg-white pl-3 pr-10 py-2 text-festival-purple font-semibold focus:border-festival-yellow focus:outline-none focus:ring-2 focus:ring-festival-yellow/30 appearance-none"
+                    aria-label={t('quantity')}
+                  >
+                    {QUANTITY_OPTIONS.map((n) => (
+                      <option key={n} value={n}>
+                        {n}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown
+                    className="pointer-events-none absolute right-3 top-1/2 size-5 -translate-y-1/2 text-festival-purple/70"
+                    aria-hidden
+                  />
+                </div>
               </div>
               {PRICE_IDS.vip ? (
                 <button

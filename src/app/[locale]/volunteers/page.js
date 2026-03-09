@@ -1,7 +1,7 @@
 'use client'
 
 import { CONTACT_EMAIL } from '@/lib/contact'
-import { CheckCircle } from 'lucide-react'
+import { CheckCircle, ChevronDown } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 
@@ -119,21 +119,27 @@ export default function VolunteersPage() {
                   >
                     {t('formInterest')}
                   </label>
-                  <select
-                    id="vol-interest"
-                    name="interest"
-                    className="w-full px-4 py-3 rounded-lg border border-festival-purple/20 bg-festival-cream/30 focus:ring-2 focus:ring-festival-purple focus:border-transparent text-festival-purple"
-                  >
-                    <option value="">{t('interestPlaceholder')}</option>
-                    {INTEREST_KEYS.map((key) => (
-                      <option
-                        key={key}
-                        value={key.replace('interest', '').toLowerCase()}
-                      >
-                        {t(key)}
-                      </option>
-                    ))}
-                  </select>
+                  <div className="relative">
+                    <select
+                      id="vol-interest"
+                      name="interest"
+                      className="w-full pl-4 pr-10 py-3 rounded-lg border border-festival-purple/20 bg-festival-cream/30 focus:ring-2 focus:ring-festival-purple focus:border-transparent text-festival-purple appearance-none"
+                    >
+                      <option value="">{t('interestPlaceholder')}</option>
+                      {INTEREST_KEYS.map((key) => (
+                        <option
+                          key={key}
+                          value={key.replace('interest', '').toLowerCase()}
+                        >
+                          {t(key)}
+                        </option>
+                      ))}
+                    </select>
+                    <ChevronDown
+                      className="pointer-events-none absolute right-3 top-1/2 size-5 -translate-y-1/2 text-festival-purple/70"
+                      aria-hidden
+                    />
+                  </div>
                 </div>
                 <div>
                   <label
