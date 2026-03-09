@@ -4,6 +4,7 @@ import WavyDivider from '@/components/WavyDivider'
 import { AnimatePresence, motion } from 'framer-motion'
 import { AlertCircle, Info } from 'lucide-react'
 import { useLocale, useTranslations } from 'next-intl'
+import Link from 'next/link'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { Suspense, useEffect, useState } from 'react'
 
@@ -256,6 +257,17 @@ function TicketsContent() {
               )}
             </div>
           </div>
+
+          <p className="mt-12 text-center text-festival-purple/80 text-sm md:text-base max-w-xl mx-auto">
+            {t('contactHelp')}
+            <Link
+              href={`/${locale}/contact`}
+              className="text-festival-purple font-semibold underline underline-offset-2 hover:text-festival-purple/90 transition-colors"
+            >
+              {t('contactPage')}
+            </Link>
+            .
+          </p>
         </div>
       </section>
     </main>

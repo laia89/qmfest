@@ -226,6 +226,8 @@
     "vipPrice": "30€",
     "vipDesc": "Backstage + perks",
     "quantity": "Quantity",
+    "contactHelp": "Questions or issues with your purchase? Get in touch ",
+    "contactPage": "here",
     "cta": "Buy now",
     "canceledMessage": "You canceled the purchase. You can try again whenever you like.",
     "checkoutError": "Could not open the payment page. Please try again or contact us.",
