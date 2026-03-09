@@ -1,5 +1,6 @@
 'use client'
 
+import WavyDivider from '@/components/WavyDivider'
 import { AnimatePresence, motion } from 'framer-motion'
 import { AlertCircle, Info } from 'lucide-react'
 import { useLocale, useTranslations } from 'next-intl'
@@ -93,6 +94,7 @@ function TicketsContent() {
 
   return (
     <main className="min-h-screen pt-24 pb-16">
+      <WavyDivider className="bg-festival-cream" />
       <section className="py-20 bg-festival-cream">
         <div className="container mx-auto px-4 text-center">
           <h1 className="page-title">{t('title')}</h1>
