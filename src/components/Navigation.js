@@ -185,7 +185,7 @@ export default function Navigation() {
                   onClick={closeMenu}
                   className={`py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-festival-yellow ${
                     isTickets
-                      ? `ring-2 ring-festival-yellow ring-offset-2 ring-offset-festival-purple bg-white/5 hover:bg-white/10 ${active ? 'text-festival-yellow font-semibold' : 'text-white'}`
+                      ? `hover:bg-white/10 md:ring-2 md:ring-festival-yellow md:ring-offset-2 md:ring-offset-festival-purple md:bg-white/5 ${active ? 'bg-white/10 text-festival-yellow font-semibold' : 'text-white'}`
                       : active
                         ? 'bg-white/10 text-festival-yellow font-semibold'
                         : 'text-white hover:bg-white/10'
