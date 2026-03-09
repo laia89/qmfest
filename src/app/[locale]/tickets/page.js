@@ -14,6 +14,9 @@ const PRICE_IDS = {
   vip: process.env.NEXT_PUBLIC_STRIPE_VIP_PRICE_ID,
 }
 
+const MIN_QUANTITY = 1
+const MAX_QUANTITY = 10
+
 function TicketsContent() {
   const t = useTranslations('tickets')
   const locale = useLocale()
@@ -23,7 +26,20 @@ function TicketsContent() {
   const [loading, setLoading] = useState(null)
   const [error, setError] = useState(null)
   const [showCanceled, setShowCanceled] = useState(false)
+  const [quantities, setQuantities] = useState({
+    earlyBird: 1,
+    regular: 1,
+    vip: 1,
+  })
   const canceled = searchParams.get('canceled') === '1'
+
+  const setQuantity = (type, value) => {
+    const n = Math.max(
+      MIN_QUANTITY,
+      Math.min(MAX_QUANTITY, Number(value) || MIN_QUANTITY),
+    )
+    setQuantities((prev) => ({ ...prev, [type]: n }))
+  }
 
   useEffect(() => {
     if (canceled) setShowCanceled(true)
@@ -47,13 +63,18 @@ function TicketsContent() {
       setError(t('checkoutError'))
       return
     }
+    const qty = quantities[type] ?? 1
     setError(null)
     setLoading(type)
     try {
       const res = await fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ priceId, quantity: 1, locale: locale || 'en' }),
+        body: JSON.stringify({
+          priceId,
+          quantity: qty,
+          locale: locale || 'en',
+        }),
       })
       const data = await res.json()
       if (res.ok && data.url) {
@@ -113,9 +134,26 @@ function TicketsContent() {
               <p className="text-4xl font-bold text-festival-purple mb-6">
                 {t('earlyBirdPrice')}
               </p>
-              <p className="text-festival-purple/70 text-sm mb-6">
+              <p className="text-festival-purple/70 text-sm mb-4">
                 {t('earlyBirdDesc')}
               </p>
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <label
+                  htmlFor="qty-earlyBird"
+                  className="text-festival-purple/80 text-sm font-medium"
+                >
+                  {t('quantity')}
+                </label>
+                <input
+                  id="qty-earlyBird"
+                  type="number"
+                  min={MIN_QUANTITY}
+                  max={MAX_QUANTITY}
+                  value={quantities.earlyBird}
+                  onChange={(e) => setQuantity('earlyBird', e.target.value)}
+                  className="w-14 rounded-lg border-2 border-festival-purple/20 bg-white px-2 py-1.5 text-center text-festival-purple font-semibold focus:border-festival-yellow focus:outline-none focus:ring-2 focus:ring-festival-yellow/30"
+                />
+              </div>
               {PRICE_IDS.earlyBird ? (
                 <button
                   type="button"
@@ -138,9 +176,26 @@ function TicketsContent() {
               <p className="text-4xl font-bold text-festival-purple mb-6">
                 {t('regularPrice')}
               </p>
-              <p className="text-festival-purple/70 text-sm mb-6">
+              <p className="text-festival-purple/70 text-sm mb-4">
                 {t('regularDesc')}
               </p>
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <label
+                  htmlFor="qty-regular"
+                  className="text-festival-purple/80 text-sm font-medium"
+                >
+                  {t('quantity')}
+                </label>
+                <input
+                  id="qty-regular"
+                  type="number"
+                  min={MIN_QUANTITY}
+                  max={MAX_QUANTITY}
+                  value={quantities.regular}
+                  onChange={(e) => setQuantity('regular', e.target.value)}
+                  className="w-14 rounded-lg border-2 border-festival-purple/20 bg-white px-2 py-1.5 text-center text-festival-purple font-semibold focus:border-festival-purple focus:outline-none focus:ring-2 focus:ring-festival-purple/30"
+                />
+              </div>
               {PRICE_IDS.regular ? (
                 <button
                   type="button"
@@ -163,9 +218,26 @@ function TicketsContent() {
               <p className="text-4xl font-bold text-festival-purple mb-6">
                 {t('vipPrice')}
               </p>
-              <p className="text-festival-purple/70 text-sm mb-6">
+              <p className="text-festival-purple/70 text-sm mb-4">
                 {t('vipDesc')}
               </p>
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <label
+                  htmlFor="qty-vip"
+                  className="text-festival-purple/80 text-sm font-medium"
+                >
+                  {t('quantity')}
+                </label>
+                <input
+                  id="qty-vip"
+                  type="number"
+                  min={MIN_QUANTITY}
+                  max={MAX_QUANTITY}
+                  value={quantities.vip}
+                  onChange={(e) => setQuantity('vip', e.target.value)}
+                  className="w-14 rounded-lg border-2 border-festival-purple/20 bg-white px-2 py-1.5 text-center text-festival-purple font-semibold focus:border-festival-yellow focus:outline-none focus:ring-2 focus:ring-festival-yellow/30"
+                />
+              </div>
               {PRICE_IDS.vip ? (
                 <button
                   type="button"

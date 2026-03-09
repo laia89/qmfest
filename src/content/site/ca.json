@@ -226,6 +226,7 @@
     "vip": "VIP",
     "vipPrice": "30€",
     "vipDesc": "Backstage i avantatges",
+    "quantity": "Quantitat",
     "cta": "Compra ara",
     "canceledMessage": "Has cancel·lat la compra. Pots tornar a provar quan vulguis.",
     "checkoutError": "No s'ha pogut obrir la passarel·la de pagament. Torna-ho a provar o contacta'ns.",

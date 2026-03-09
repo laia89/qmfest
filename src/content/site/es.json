@@ -226,6 +226,7 @@
     "vip": "VIP",
     "vipPrice": "30€",
     "vipDesc": "Backstage y ventajas",
+    "quantity": "Cantidad",
     "cta": "Comprar ahora",
     "canceledMessage": "Has cancelado la compra. Puedes intentarlo de nuevo cuando quieras.",
     "checkoutError": "No se ha podido abrir la pasarela de pago. Inténtalo de nuevo o contáctanos.",
