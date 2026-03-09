@@ -1,5 +1,6 @@
 'use client'
 
+import { CheckCircle } from 'lucide-react'
 import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -71,7 +72,7 @@ export default function Footer() {
   return (
     <footer className="bg-festival-purple text-festival-cream pt-16 pb-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[0.7fr_0.7fr_1fr_1.6fr] gap-8 lg:gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[0.7fr_0.7fr_1fr_1.6fr] gap-y-2 gap-x-0 md:gap-8 lg:gap-6 mb-8">
           {/* Columna 1: Logo + enllaços */}
           <div>
             <div className="min-h-[2.5rem] flex items-end mb-4">
@@ -108,7 +109,7 @@ export default function Footer() {
 
           {/* Columna 2: enllaços */}
           <div className="lg:pl-3">
-            <div className="min-h-[2.5rem] mb-4" aria-hidden="true" />
+            <div className="md:min-h-[2.5rem] md:mb-4" aria-hidden="true" />
             <nav
               aria-label="Footer navigation"
               className="flex flex-col gap-2 text-sm"
@@ -162,7 +163,13 @@ export default function Footer() {
               </h3>
             </div>
             {subscribed ? (
-              <p className="text-festival-cream/90">{t('newsletterSuccess')}</p>
+              <p className="text-festival-cream/90 flex items-center gap-2">
+                <CheckCircle
+                  className="w-5 h-5 shrink-0 text-festival-yellow"
+                  aria-hidden
+                />
+                {t('newsletterSuccess')}
+              </p>
             ) : (
               <form
                 onSubmit={handleNewsletter}

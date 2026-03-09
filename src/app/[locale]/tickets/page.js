@@ -1,8 +1,12 @@
 'use client'
 
+import { AnimatePresence, motion } from 'framer-motion'
+import { AlertCircle, Info } from 'lucide-react'
 import { useLocale, useTranslations } from 'next-intl'
-import { useSearchParams } from 'next/navigation'
-import { Suspense, useState } from 'react'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { Suspense, useEffect, useState } from 'react'
+
+const MESSAGE_DURATION_MS = 5000
 
 const PRICE_IDS = {
   earlyBird: process.env.NEXT_PUBLIC_STRIPE_EARLY_BIRD_PRICE_ID,
@@ -13,13 +17,37 @@ const PRICE_IDS = {
 function TicketsContent() {
   const t = useTranslations('tickets')
   const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
   const searchParams = useSearchParams()
   const [loading, setLoading] = useState(null)
+  const [error, setError] = useState(null)
+  const [showCanceled, setShowCanceled] = useState(false)
   const canceled = searchParams.get('canceled') === '1'
+
+  useEffect(() => {
+    if (canceled) setShowCanceled(true)
+  }, [canceled])
+
+  useEffect(() => {
+    if (!showCanceled && !error) return
+    const tId = setTimeout(() => {
+      if (showCanceled) {
+        setShowCanceled(false)
+        router.replace(pathname)
+      }
+      setError(null)
+    }, MESSAGE_DURATION_MS)
+    return () => clearTimeout(tId)
+  }, [showCanceled, error, pathname, router])
 
   const handleCheckout = async (type) => {
     const priceId = PRICE_IDS[type]
-    if (!priceId) return
+    if (!priceId) {
+      setError(t('checkoutError'))
+      return
+    }
+    setError(null)
     setLoading(type)
     try {
       const res = await fetch('/api/create-checkout-session', {
@@ -28,10 +56,14 @@ function TicketsContent() {
         body: JSON.stringify({ priceId, quantity: 1, locale: locale || 'en' }),
       })
       const data = await res.json()
-      if (data.url) window.location.href = data.url
-      else throw new Error(data.error || 'Checkout failed')
+      if (res.ok && data.url) {
+        window.location.href = data.url
+        return
+      }
+      throw new Error(data.error || 'Checkout failed')
     } catch (err) {
       console.error(err)
+      setError(t('checkoutError'))
       setLoading(null)
     }
   }
@@ -46,11 +78,32 @@ function TicketsContent() {
           <p className="page-subtitle">{t('subtitle')}</p>
           <div className="page-subtitle-line" />
 
-          {canceled && (
-            <p className="mb-8 mx-auto max-w-xl px-4 py-3 rounded-xl bg-festival-purple/10 text-festival-purple border border-festival-purple/20">
-              {t('canceledMessage')}
-            </p>
-          )}
+          <AnimatePresence mode="wait">
+            {showCanceled && (
+              <motion.div
+                key="canceled"
+                initial={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+                className="mb-8 mx-auto max-w-xl px-4 py-3 rounded-xl bg-festival-purple/10 text-festival-purple border border-festival-purple/20 flex items-center justify-center gap-3"
+              >
+                <Info className="w-5 h-5 shrink-0" aria-hidden />
+                <p>{t('canceledMessage')}</p>
+              </motion.div>
+            )}
+            {error && (
+              <motion.div
+                key="error"
+                initial={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+                className="mb-8 mx-auto max-w-xl px-4 py-3 rounded-xl bg-festival-purple/10 text-festival-purple border border-festival-purple/20 flex items-center justify-center gap-3"
+              >
+                <AlertCircle className="w-5 h-5 shrink-0" aria-hidden />
+                <p>{error}</p>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="bg-white rounded-2xl shadow-lg p-8 border-2 border-festival-yellow/30 hover:border-festival-yellow transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">

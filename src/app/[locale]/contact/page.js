@@ -1,6 +1,7 @@
 'use client'
 
 import { CONTACT_EMAIL } from '@/lib/contact'
+import { CheckCircle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 
@@ -51,7 +52,11 @@ export default function ContactPage() {
           <div className="page-subtitle-line" />
 
           {sent ? (
-            <p className="text-center text-festival-purple text-lg py-8">
+            <p className="text-center text-festival-purple text-lg py-8 flex items-center justify-center gap-2">
+              <CheckCircle
+                className="w-5 h-5 shrink-0 text-festival-purple"
+                aria-hidden
+              />
               {t('formSuccess')}
             </p>
           ) : (

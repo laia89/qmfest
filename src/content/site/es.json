@@ -227,6 +227,18 @@
     "vipPrice": "30€",
     "vipDesc": "Backstage y ventajas",
     "cta": "Comprar ahora",
-    "canceledMessage": "Has cancelado la compra. Puedes intentarlo de nuevo cuando quieras."
+    "canceledMessage": "Has cancelado la compra. Puedes intentarlo de nuevo cuando quieras.",
+    "checkoutError": "No se ha podido abrir la pasarela de pago. Inténtalo de nuevo o contáctanos.",
+    "successTitle": "¡Gracias!",
+    "successDescription": "Tu compra se ha completado. Revisa el correo para la confirmación y tu e-ticket.",
+    "successPlaylist": "Mientras esperas, escucha la",
+    "successPlaylistLink": "playlist oficial del festival",
+    "successOrder": "Pedido:",
+    "successNextTitle": "Qué hacer ahora",
+    "successNextEmail": "Revisa el correo para la confirmación y tu e-ticket",
+    "successNextPlaylist": "Escucha la playlist y descubre a los artistas",
+    "successCtaPlaylist": "Ver playlist",
+    "successCtaHome": "Volver al inicio",
+    "loading": "Cargando…"
   }
 }
