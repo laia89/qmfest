@@ -76,18 +76,26 @@ export default function Navigation() {
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-6">
-            {navLinks.map(({ href, key }) => (
-              <Link
-                key={key}
-                href={href ? `${basePath}${href}` : basePath}
-                className={`text-white hover:text-festival-yellow transition-colors focus:outline-none focus:ring-2 focus:ring-festival-yellow focus:ring-offset-2 focus:ring-offset-festival-purple rounded px-2 py-1 ${
-                  isActive(href) ? 'text-festival-yellow font-semibold' : ''
-                }`}
-                aria-current={isActive(href) ? 'page' : undefined}
-              >
-                {t(key)}
-              </Link>
-            ))}
+            {navLinks.map(({ href, key }) => {
+              const isTickets = href === '/tickets'
+              const active = isActive(href)
+              return (
+                <Link
+                  key={key}
+                  href={href ? `${basePath}${href}` : basePath}
+                  className={`rounded px-2 py-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-festival-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-festival-purple ${
+                    isTickets
+                      ? `ring-2 ring-festival-yellow ring-offset-2 ring-offset-festival-purple hover:text-festival-yellow ${active ? 'text-festival-yellow font-semibold' : 'text-white'}`
+                      : active
+                        ? 'text-festival-yellow font-semibold underline underline-offset-4 decoration-2 hover:text-festival-yellow/90'
+                        : 'text-white hover:text-festival-yellow'
+                  }`}
+                  aria-current={active ? 'page' : undefined}
+                >
+                  {t(key)}
+                </Link>
+              )
+            })}
             <div className="flex items-center gap-2 ml-4 pl-4 border-l border-white/30">
               {languages.map((lang) => (
                 <Link
@@ -167,21 +175,27 @@ export default function Navigation() {
           aria-label="Mobile navigation"
         >
           <div className="flex flex-col gap-2 pb-4">
-            {navLinks.map(({ href, key }) => (
-              <Link
-                key={key}
-                href={href ? `${basePath}${href}` : basePath}
-                onClick={closeMenu}
-                className={`py-3 px-4 rounded-lg text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-festival-yellow ${
-                  isActive(href)
-                    ? 'bg-white/10 text-festival-yellow font-semibold'
-                    : ''
-                }`}
-                aria-current={isActive(href) ? 'page' : undefined}
-              >
-                {t(key)}
-              </Link>
-            ))}
+            {navLinks.map(({ href, key }) => {
+              const isTickets = href === '/tickets'
+              const active = isActive(href)
+              return (
+                <Link
+                  key={key}
+                  href={href ? `${basePath}${href}` : basePath}
+                  onClick={closeMenu}
+                  className={`py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-festival-yellow ${
+                    isTickets
+                      ? `ring-2 ring-festival-yellow ring-offset-2 ring-offset-festival-purple bg-white/5 hover:bg-white/10 ${active ? 'text-festival-yellow font-semibold' : 'text-white'}`
+                      : active
+                        ? 'bg-white/10 text-festival-yellow font-semibold'
+                        : 'text-white hover:bg-white/10'
+                  }`}
+                  aria-current={active ? 'page' : undefined}
+                >
+                  {t(key)}
+                </Link>
+              )
+            })}
             <div className="flex gap-3 pt-4 mt-2 border-t border-white/30">
               {languages.map((lang) => (
                 <Link
