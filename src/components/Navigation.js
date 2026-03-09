@@ -75,7 +75,7 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-6">
             {navLinks.map(({ href, key }) => {
               const isTickets = href === '/tickets'
               const active = isActive(href)
@@ -85,7 +85,7 @@ export default function Navigation() {
                   href={href ? `${basePath}${href}` : basePath}
                   className={`rounded px-2 py-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-festival-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-festival-purple ${
                     isTickets
-                      ? `ring-2 ring-festival-yellow ring-offset-2 ring-offset-festival-purple hover:text-festival-yellow ${active ? 'text-festival-yellow font-semibold' : 'text-white'}`
+                      ? `hover:text-festival-yellow lg:ring-2 lg:ring-festival-yellow lg:ring-offset-2 lg:ring-offset-festival-purple ${active ? 'text-festival-yellow font-semibold' : 'text-white'}`
                       : active
                         ? 'text-festival-yellow font-semibold underline underline-offset-4 decoration-2 hover:text-festival-yellow/90'
                         : 'text-white hover:text-festival-yellow'
@@ -108,14 +108,17 @@ export default function Navigation() {
                   } transition-colors`}
                   aria-label={`Switch to ${lang.name}`}
                 >
-                  {lang.name}
+                  <span className="lg:inline xl:hidden">
+                    {lang.code.toUpperCase()}
+                  </span>
+                  <span className="hidden xl:inline">{lang.name}</span>
                 </Link>
               ))}
             </div>
           </div>
 
           {/* Mobile: idiomes a la barra + botó menú (amagat a desktop) */}
-          <div className="md:hidden flex items-center gap-1">
+          <div className="lg:hidden flex items-center gap-1">
             {languages.map((lang) => (
               <Link
                 key={lang.code}
@@ -168,7 +171,7 @@ export default function Navigation() {
         {/* Mobile menu */}
         <div
           id="mobile-menu"
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
+          className={`lg:hidden overflow-hidden transition-all duration-300 ease-out ${
             menuOpen ? 'max-h-80 opacity-100 mt-4' : 'max-h-0 opacity-0'
           }`}
           role="dialog"
@@ -185,7 +188,7 @@ export default function Navigation() {
                   onClick={closeMenu}
                   className={`py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-festival-yellow ${
                     isTickets
-                      ? `hover:bg-white/10 md:ring-2 md:ring-festival-yellow md:ring-offset-2 md:ring-offset-festival-purple md:bg-white/5 ${active ? 'bg-white/10 text-festival-yellow font-semibold' : 'text-white'}`
+                      ? `hover:bg-white/10 lg:ring-2 lg:ring-festival-yellow lg:ring-offset-2 lg:ring-offset-festival-purple lg:bg-white/5 ${active ? 'bg-white/10 text-festival-yellow font-semibold' : 'text-white'}`
                       : active
                         ? 'bg-white/10 text-festival-yellow font-semibold'
                         : 'text-white hover:bg-white/10'
