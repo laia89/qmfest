@@ -12,7 +12,7 @@ values:
 
 ## ¿Quiénes somos y qué hacemos?
 
-QMFE nace con la imperiosa necesidad de traer historias lgbtq+ a la comunidad. Como creadora y persona lgbtq+ sentía la necesidad de ser representada, de escuchar historias queer con las cuales sentirme identificada, pero no lo quería para mi sola, quería brindar ese espacio a toda la comunidad. Ese fuerte deseo de pertenecer y ser contenidos dio a luz al QMFE, que es un proyecto de divulgación cultural, un evento promotor de la música queer actual.
+QMFE nace con la imperiosa necesidad de traer historias lgbtq+ a la comunidad. Como creadoras y personas lgbtq+, sentíamos la necesidad de ser representadas, de escuchar historias queer con las cuales sentirnos identificadas, pero no lo queríamos solo para nosotras: queríamos brindar ese espacio a toda la comunidad. Ese fuerte deseo de pertenecer y ser acogidas dio a luz al QMFE, un proyecto de divulgación cultural y un evento que promueve la música queer actual.
 
 Hemos creado un espacio seguro de fraternidad para los artistas emergentes queer de la ciudad de Barcelona.
 

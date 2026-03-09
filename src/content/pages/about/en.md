@@ -12,7 +12,7 @@ values:
 
 ## Who we are and what we do
 
-QMFE was born from the urgent need to bring lgbtq+ stories to the community. As a creator and lgbtq+ person, I felt the need to be represented, to hear queer stories I could identify with, but I didn’t want that just for myself—I wanted to offer that space to the whole community. That strong desire to belong and to be embraced gave birth to QMFE, a cultural outreach project and an event that promotes today’s queer music.
+QMFE was born from the urgent need to bring lgbtq+ stories to the community. As creators and lgbtq+ people, we felt the need to be represented, to hear queer stories we could identify with, but we didn’t want that just for ourselves—we wanted to offer that space to the whole community. That strong desire to belong and to be embraced gave birth to QMFE, a cultural outreach project and an event that promotes today’s queer music.
 
 We have created a safe, fraternal space for emerging queer artists in the city of Barcelona.
 

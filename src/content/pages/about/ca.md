@@ -12,7 +12,7 @@ values:
 
 ## Qui som i què fem?
 
-El QMFE neix de la necessitat imperiosa d’acostar històries lgbtq+ a la comunitat. Com a creadora i persona lgbtq+, sentia la necessitat de ser representada, d’escoltar històries queer amb les quals identificar-me, però no ho volia només per a mi: volia oferir aquest espai a tota la comunitat. Aquest fort desig de pertànyer i de ser acollits va donar a llum el QMFE, un projecte de divulgació cultural i un esdeveniment que promou la música queer actual.
+El QMFE neix de la necessitat imperiosa d’acostar històries lgbtq+ a la comunitat. Com a creadores i persones lgbtq+, sentíem la necessitat de ser representades, d’escoltar històries queer amb les quals identificar-nos, però no ho volíem només per a nosaltres: volíem oferir aquest espai a tota la comunitat. Aquest fort desig de pertànyer i de ser acollits va donar a llum el QMFE, un projecte de divulgació cultural i un esdeveniment que promou la música queer actual.
 
 Hem creat un espai segur de fraternitat per als artistes emergents queer de la ciutat de Barcelona.
 
